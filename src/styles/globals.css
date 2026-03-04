@@ -1,0 +1,56 @@
+/**
+ * 글로벌 스타일시트
+ * - Tailwind CSS 디렉티브 및 PompCore 공통 스타일 정의
+ * - 모든 페이지에서 적용되는 기본 스타일
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts: Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  /* 기본 HTML 스타일 */
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    @apply bg-surface text-white;
+    @apply transition-colors duration-300;
+  }
+
+  /* 라이트 모드 */
+  body.light {
+    @apply bg-surface-light text-slate-900;
+  }
+}
+
+@layer components {
+  /* 글래스모피즘 카드 베이스 스타일 */
+  .glass {
+    @apply bg-surface-card backdrop-blur-[16px] border border-white/10 rounded-2xl;
+  }
+
+  .glass-light {
+    @apply bg-surface-card-light backdrop-blur-[16px] border border-black/5 rounded-2xl;
+  }
+
+  /* 그라디언트 텍스트 */
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent;
+  }
+
+  /* 그라디언트 배경 (Hero 섹션 등) */
+  .bg-gradient-hero {
+    @apply bg-gradient-to-br from-brand-950 via-surface to-purple-950;
+  }
+
+  /* 호버 시 글로우 효과 */
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow hover:scale-[1.02];
+  }
+}
