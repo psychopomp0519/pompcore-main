@@ -2,7 +2,6 @@
  * 서비스 소개 섹션
  * - PompCore의 핵심 가치/특징을 아이콘 카드로 소개
  * - FEATURES 배열 수정으로 내용 변경 가능
- * - 추후 상세 UI 디자인 확정 시 이 파일만 수정
  */
 import GlassCard from '../../components/common/GlassCard';
 
@@ -39,10 +38,10 @@ export default function FeaturesSection() {
     <section className="max-w-7xl mx-auto px-6 py-24">
       {/* 섹션 헤더 */}
       <div className="text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
           왜 <span className="text-gradient">PompCore</span>인가요?
         </h2>
-        <p className="text-slate-400 max-w-xl mx-auto">
+        <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">
           하나의 플랫폼에서 일상의 모든 것을 관리하세요.
         </p>
       </div>
@@ -52,10 +51,10 @@ export default function FeaturesSection() {
         {FEATURES.map((feature) => (
           <GlassCard key={feature.title} padding="lg">
             <span className="text-3xl mb-4 block">{feature.icon}</span>
-            <h3 className="text-lg font-semibold text-white mb-2">
+            <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
               {feature.title}
             </h3>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               {feature.description}
             </p>
           </GlassCard>

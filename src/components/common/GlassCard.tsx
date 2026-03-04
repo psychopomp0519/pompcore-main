@@ -1,16 +1,14 @@
 /**
- * 글래스모피즘 카드 컴포넌트
- * - 반투명 배경 + backdrop-blur 효과
- * - PompCore UI의 핵심 디자인 요소
- * - hover 시 부드러운 스케일업 + 글로우 효과
+ * 카드 컴포넌트
+ * - 라이트: 깔끔한 화이트 카드 + 미묘한 그림자
+ * - 다크: 글래스모피즘 반투명 카드
+ * - 호버 시 부드러운 스케일업 효과
  */
 import type { HTMLAttributes, ReactNode } from 'react';
 
 interface GlassCardProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode;
-  /** 호버 글로우 효과 활성화 (기본: true) */
   hoverable?: boolean;
-  /** 패딩 크기 */
   padding?: 'sm' | 'md' | 'lg';
 }
 
@@ -30,9 +28,9 @@ export default function GlassCard({
   return (
     <div
       className={`
-        glass shadow-glass
+        card
         ${paddingStyles[padding]}
-        ${hoverable ? 'hover-glow' : ''}
+        ${hoverable ? 'hover-lift' : ''}
         ${className}
       `}
       {...props}

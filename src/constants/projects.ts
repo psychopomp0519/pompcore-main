@@ -4,6 +4,8 @@
  * - url 필드에 실제 서비스 URL을 입력하면 프로젝트 카드에서 바로 연결
  */
 import type { Project } from '../types/project.types';
+import vaultLogo from '../assets/logos/vaultlogo.svg';
+import questLogo from '../assets/logos/questlogo.svg';
 
 export const PROJECTS: Project[] = [
   {
@@ -15,8 +17,9 @@ export const PROJECTS: Project[] = [
     icon: '🔐',
     status: 'coming_soon',
     category: 'finance',
-    accentColor: 'text-emerald-400',
+    accentColor: 'text-emerald-600 dark:text-emerald-400',
     accentGradient: 'from-emerald-500 to-teal-500',
+    logoSrc: vaultLogo,
   },
   {
     id: 'quest',
@@ -27,8 +30,9 @@ export const PROJECTS: Project[] = [
     icon: '⚔️',
     status: 'coming_soon',
     category: 'productivity',
-    accentColor: 'text-blue-400',
+    accentColor: 'text-blue-600 dark:text-blue-400',
     accentGradient: 'from-blue-500 to-cyan-500',
+    logoSrc: questLogo,
   },
 ];
 

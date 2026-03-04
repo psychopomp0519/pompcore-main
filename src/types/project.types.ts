@@ -32,4 +32,6 @@ export interface Project {
   accentColor: string;
   /** 브랜드 그라디언트 (Tailwind 클래스) */
   accentGradient: string;
+  /** 로고 SVG 경로 (없으면 icon 이모지 사용) */
+  logoSrc?: string;
 }

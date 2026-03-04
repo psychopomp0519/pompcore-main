@@ -1,8 +1,7 @@
 /**
  * 공통 버튼 컴포넌트
- * - PompCore 전체에서 사용하는 통합 버튼
+ * - 라이트/다크 모드 모두 대응
  * - variant로 스타일 변경, size로 크기 조절
- * - 향후 서브 프로젝트에서도 동일한 버튼 스타일 재사용
  */
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
@@ -18,12 +17,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 shadow-lg hover:shadow-glow',
+    'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 shadow-lg hover:shadow-xl',
   secondary:
-    'bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm border border-white/10',
-  ghost: 'text-slate-300 hover:text-white hover:bg-white/5',
+    'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20',
+  ghost:
+    'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-white/5',
   outline:
-    'border border-brand-500 text-brand-400 hover:bg-brand-500/10',
+    'border border-brand-500 text-brand-600 hover:bg-brand-50 dark:text-brand-400 dark:hover:bg-brand-500/10',
 };
 
 const sizeStyles: Record<ButtonSize, string> = {

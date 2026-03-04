@@ -1,56 +1,70 @@
 /**
  * 글로벌 스타일시트
  * - Tailwind CSS 디렉티브 및 PompCore 공통 스타일 정의
- * - 모든 페이지에서 적용되는 기본 스타일
+ * - 라이트 테마 기본, 다크 모드는 dark: 접두사로 대응
  */
+
+/* Google Fonts: Inter (반드시 @tailwind보다 먼저 선언) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Google Fonts: Inter */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 @layer base {
-  /* 기본 HTML 스타일 */
   html {
     @apply scroll-smooth;
   }
 
+  /* 라이트 모드 기본 */
   body {
     @apply font-sans antialiased;
-    @apply bg-surface text-white;
+    @apply bg-surface text-slate-900;
     @apply transition-colors duration-300;
   }
 
-  /* 라이트 모드 */
-  body.light {
-    @apply bg-surface-light text-slate-900;
+  /* 다크 모드 */
+  .dark body {
+    @apply bg-surface-dark text-white;
   }
 }
 
 @layer components {
-  /* 글래스모피즘 카드 베이스 스타일 */
-  .glass {
-    @apply bg-surface-card backdrop-blur-[16px] border border-white/10 rounded-2xl;
+  /* 카드 - 라이트 (기본) */
+  .card {
+    @apply bg-white border border-slate-200 rounded-2xl shadow-card;
+    @apply transition-all duration-300;
+  }
+  .card:hover {
+    @apply shadow-card-hover;
   }
 
-  .glass-light {
-    @apply bg-surface-card-light backdrop-blur-[16px] border border-black/5 rounded-2xl;
+  /* 카드 - 다크 모드 */
+  .dark .card {
+    @apply bg-surface-card-dark backdrop-blur-[16px] border-white/10 shadow-glass;
+  }
+
+  /* 글래스모피즘 카드 (다크 전용 특수 효과) */
+  .glass {
+    @apply bg-surface-card backdrop-blur-[16px] border border-slate-200 rounded-2xl;
+  }
+  .dark .glass {
+    @apply bg-surface-card-dark border-white/10;
   }
 
   /* 그라디언트 텍스트 */
   .text-gradient {
-    @apply bg-gradient-to-r from-brand-400 to-purple-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand-500 to-purple-500 bg-clip-text text-transparent;
+  }
+  .dark .text-gradient {
+    @apply from-brand-400 to-purple-400;
   }
 
-  /* 그라디언트 배경 (Hero 섹션 등) */
-  .bg-gradient-hero {
-    @apply bg-gradient-to-br from-brand-950 via-surface to-purple-950;
+  /* 호버 시 스케일업 효과 */
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-[1.02] hover:shadow-card-hover;
   }
-
-  /* 호버 시 글로우 효과 */
-  .hover-glow {
-    @apply transition-all duration-300 hover:shadow-glow hover:scale-[1.02];
+  .dark .hover-lift {
+    @apply hover:shadow-glow;
   }
 }

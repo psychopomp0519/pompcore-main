@@ -2,6 +2,19 @@
 
 모든 버전별 상세 패치노트는 [docs/patchnotes/](docs/patchnotes/) 폴더를 참조하세요.
 
+## [0.2.0] - 2026-03-04
+
+라이트 테마 기반 디자인 리뉴얼 + 다크 모드 토글
+
+- 라이트 테마 기본값 전환, Navy 컬러 팔레트 추가
+- 다크 모드 토글 (themeStore + Header 🌙/☀️ 버튼)
+- SVG 로고 통합 (pompcore, vault, quest)
+- 전체 컴포넌트/페이지 라이트-다크 듀얼 모드 적용
+- 프로젝트 이식용 템플릿 3종 추가 (docs/templates/)
+- 비즈니스 전략 문서화 (AdSense, Polar, Clarity, SEO/GEO)
+
+상세: [docs/patchnotes/v0.2.0.md](docs/patchnotes/v0.2.0.md)
+
 ## [0.1.1] - 2026-03-04
 
 메인 페이지 섹션 구조 확립

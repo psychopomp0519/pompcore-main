@@ -12,7 +12,7 @@ const config: Config = {
   darkMode: 'class',
   theme: {
     extend: {
-      /* PompCore 브랜드 컬러 팔레트 */
+      /* PompCore 브랜드 컬러 팔레트 (로고 네이비 기반) */
       colors: {
         brand: {
           50: '#eef2ff',
@@ -20,26 +20,33 @@ const config: Config = {
           200: '#c7d2fe',
           300: '#a5b4fc',
           400: '#818cf8',
-          500: '#6366f1', // Primary
+          500: '#6366f1',
           600: '#4f46e5',
           700: '#4338ca',
           800: '#3730a3',
           900: '#312e81',
           950: '#1e1b4b',
         },
+        navy: {
+          DEFAULT: '#2B3442',
+          light: '#3d4a5c',
+          dark: '#1a2332',
+        },
         surface: {
-          DEFAULT: '#0f172a', // Dark background
-          light: '#f8fafc',  // Light background
-          card: 'rgba(30, 41, 59, 0.5)', // Glass card
-          'card-light': 'rgba(255, 255, 255, 0.7)',
+          DEFAULT: '#f8fafc',
+          dark: '#0f172a',
+          card: 'rgba(255, 255, 255, 0.8)',
+          'card-dark': 'rgba(30, 41, 59, 0.5)',
         },
       },
       /* 폰트 패밀리 */
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
-      /* 글래스모피즘 박스 쉐도우 */
+      /* 박스 쉐도우 */
       boxShadow: {
+        card: '0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.04)',
+        'card-hover': '0 4px 12px rgba(0, 0, 0, 0.1), 0 8px 32px rgba(0, 0, 0, 0.08)',
         glass: '0 8px 32px rgba(0, 0, 0, 0.12)',
         'glass-lg': '0 16px 48px rgba(0, 0, 0, 0.2)',
         glow: '0 0 20px rgba(99, 102, 241, 0.3)',

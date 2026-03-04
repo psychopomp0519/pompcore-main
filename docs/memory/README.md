@@ -19,7 +19,9 @@
 - **서브 프로젝트**: Vault (가계부), Quest (일정관리), 추가 예정
 - **DB/인증**: Supabase (단일 프로젝트에서 모든 앱 공유)
 - **스타일링**: Tailwind CSS 3 (디자인 토큰 중앙 관리)
-- **디자인 컨셉**: Clean & Bold (다크 기본, 글래스모피즘, Indigo-Violet 그라디언트)
+- **디자인 컨셉**: Clean & Bold (라이트 기본 + 다크 모드, Navy 컬러, 글래스모피즘)
+- **비즈니스**: AdSense 수익화, Polar 구독, Clarity 분석, SEO/GEO 최적화
+- **최종 목표**: 구글 검색 유기적 트래픽 증가
 
 ## 확장성 설계 원칙
 - 새 프로젝트 추가: `constants/projects.ts`에 항목 추가만으로 UI 자동 반영
