@@ -14,8 +14,14 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen flex flex-col bg-surface dark:bg-surface-dark transition-colors duration-300">
+      {/* 본문 바로가기 (WCAG 2.1 AA - 키보드/스크린리더 접근성) */}
+      <a href="#main-content" className="skip-nav">
+        본문 바로가기
+      </a>
       <Header />
-      <main className="flex-1 pt-20">{children}</main>
+      <main id="main-content" className="flex-1 pt-20" role="main">
+        {children}
+      </main>
       <Footer />
     </div>
   );

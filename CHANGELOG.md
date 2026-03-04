@@ -2,6 +2,22 @@
 
 모든 버전별 상세 패치노트는 [docs/patchnotes/](docs/patchnotes/) 폴더를 참조하세요.
 
+## [0.3.0] - 2026-03-04
+
+패치노트/공지사항 페이지 + UI/UX 접근성 개선
+
+- 패치노트 페이지 (/patchnotes) - 버전별 변경 이력 타임라인
+- 공지사항 페이지 (/announcements) - 고정 공지, 카테고리 배지, 펼치기/접기
+- WCAG 2.1 AA 접근성: skip-nav, aria-current, aria-expanded, focus-visible
+- 한국어 UX 최적화: Pretendard 폰트, word-break: keep-all, 행간 1.75
+- prefers-reduced-motion 지원 (모션 감소 선호 사용자)
+- 다크 모드 텍스트 오프화이트 전환 (눈 피로 감소)
+- 버튼 최소 터치 타겟 44px 보장 (Apple HIG)
+- index.html: lang="ko", meta description, 타이틀 변경
+- Supabase 미설정 시 앱 크래시 방지 (방어적 처리)
+
+상세: [docs/patchnotes/v0.3.0.md](docs/patchnotes/v0.3.0.md)
+
 ## [0.2.0] - 2026-03-04
 
 라이트 테마 기반 디자인 리뉴얼 + 다크 모드 토글

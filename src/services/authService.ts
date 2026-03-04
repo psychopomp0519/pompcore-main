@@ -4,7 +4,7 @@
  * - 향후 인증 방식이 변경되어도 이 파일만 수정하면 됨
  * - 모든 서브 프로젝트(Vault, Quest 등)에서 동일한 인터페이스 사용
  */
-import { supabase } from './supabase';
+import { supabase, isSupabaseConfigured } from './supabase';
 import type { LoginRequest, RegisterRequest, UserProfile } from '../types/auth.types';
 
 /** Supabase User → UserProfile 변환 */
@@ -52,6 +52,8 @@ export async function logout(): Promise<void> {
 
 /** 현재 세션의 사용자 정보 조회 */
 export async function getCurrentUser(): Promise<UserProfile | null> {
+  if (!isSupabaseConfigured) return null;
+
   const { data: { user }, error } = await supabase.auth.getUser();
 
   if (error || !user) return null;
@@ -60,6 +62,10 @@ export async function getCurrentUser(): Promise<UserProfile | null> {
 
 /** 인증 상태 변경 리스너 (앱 초기화 시 사용) */
 export function onAuthStateChange(callback: (user: UserProfile | null) => void) {
+  if (!isSupabaseConfigured) {
+    return { data: { subscription: { unsubscribe: () => {} } } };
+  }
+
   return supabase.auth.onAuthStateChange((_event, session) => {
     callback(session?.user ? toUserProfile(session.user) : null);
   });

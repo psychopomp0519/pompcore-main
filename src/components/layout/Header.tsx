@@ -14,6 +14,8 @@ import pompcoreLogo from '../../assets/logos/pompcorelogo.svg';
 const NAV_ITEMS = [
   { label: '홈', path: '/' },
   { label: '프로젝트', path: '/projects' },
+  { label: '공지사항', path: '/announcements' },
+  { label: '패치노트', path: '/patchnotes' },
   { label: '소개', path: '/about' },
 ];
 
@@ -53,11 +55,12 @@ export default function Header() {
         </Link>
 
         {/* 데스크톱 네비게이션 */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8" aria-label="메인 네비게이션">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.path}
               to={item.path}
+              aria-current={location.pathname === item.path ? 'page' : undefined}
               className={`
                 text-sm font-medium transition-colors duration-200
                 ${location.pathname === item.path
@@ -102,7 +105,8 @@ export default function Header() {
           <button
             className="p-2 text-slate-700 dark:text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="메뉴 열기"
+            aria-label={isMobileMenuOpen ? '메뉴 닫기' : '메뉴 열기'}
+            aria-expanded={isMobileMenuOpen}
           >
             <div className="w-6 flex flex-col gap-1.5">
               <span className={`block h-0.5 bg-current transition-transform ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`} />

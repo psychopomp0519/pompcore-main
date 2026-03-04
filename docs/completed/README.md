@@ -1,5 +1,17 @@
 # 개발 완료 목록
 
+## v0.3.0 (2026-03-04)
+
+- [x] 패치노트 페이지 (/patchnotes) - 자동 데이터 반영
+- [x] 공지사항 페이지 (/announcements) - 고정 공지, 카테고리, 펼치기/접기
+- [x] WCAG 2.1 AA 접근성 (skip-nav, aria, focus-visible)
+- [x] 한국어 UX 최적화 (Pretendard, keep-all, 행간 1.75)
+- [x] prefers-reduced-motion 지원
+- [x] 다크 모드 텍스트 오프화이트 전환
+- [x] 버튼 최소 터치 타겟 44px
+- [x] index.html SEO 기본 (lang, description, title)
+- [x] Supabase 미설정 시 방어적 처리 (빈 화면 버그 수정)
+
 ## v0.2.0 (2026-03-04)
 
 - [x] 라이트 테마 기본값 전환 (다크 전용 → 라이트 기본 + 다크 모드)

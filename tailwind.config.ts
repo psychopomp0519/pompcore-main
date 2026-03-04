@@ -39,9 +39,9 @@ const config: Config = {
           'card-dark': 'rgba(30, 41, 59, 0.5)',
         },
       },
-      /* 폰트 패밀리 */
+      /* 폰트 패밀리 (한국어 최적화: Pretendard > Noto Sans KR) */
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['Pretendard', 'Inter', 'Noto Sans KR', 'system-ui', '-apple-system', 'sans-serif'],
       },
       /* 박스 쉐도우 */
       boxShadow: {

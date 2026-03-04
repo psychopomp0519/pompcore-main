@@ -9,6 +9,8 @@ import Layout from '../components/layout/Layout';
 import Home from '../pages/Home/Home';
 import Projects from '../pages/Projects/Projects';
 import About from '../pages/About/About';
+import PatchNotes from '../pages/PatchNotes/PatchNotes';
+import Announcements from '../pages/Announcements/Announcements';
 import Login from '../pages/Auth/Login';
 import Register from '../pages/Auth/Register';
 
@@ -24,6 +26,14 @@ export const router = createBrowserRouter([
   {
     path: '/about',
     element: <Layout><About /></Layout>,
+  },
+  {
+    path: '/patchnotes',
+    element: <Layout><PatchNotes /></Layout>,
+  },
+  {
+    path: '/announcements',
+    element: <Layout><Announcements /></Layout>,
   },
   {
     path: '/auth/login',

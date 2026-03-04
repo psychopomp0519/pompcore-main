@@ -26,10 +26,11 @@ const variantStyles: Record<ButtonVariant, string> = {
     'border border-brand-500 text-brand-600 hover:bg-brand-50 dark:text-brand-400 dark:hover:bg-brand-500/10',
 };
 
+/** 최소 터치 타겟 44px 보장 (WCAG 2.1 / Apple HIG) */
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-4 py-2 text-sm rounded-lg',
-  md: 'px-6 py-2.5 text-base rounded-xl',
-  lg: 'px-8 py-3 text-lg rounded-xl',
+  sm: 'px-4 py-2.5 text-sm rounded-lg min-h-[44px]',
+  md: 'px-6 py-2.5 text-base rounded-xl min-h-[44px]',
+  lg: 'px-8 py-3 text-lg rounded-xl min-h-[48px]',
 };
 
 export default function Button({
