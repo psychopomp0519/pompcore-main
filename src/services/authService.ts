@@ -6,15 +6,24 @@
  */
 import { supabase, isSupabaseConfigured } from './supabase';
 import type { LoginRequest, RegisterRequest, UserProfile } from '../types/auth.types';
+import type { UserRole } from '../constants/roles';
 
-/** Supabase User → UserProfile 변환 */
+/** 유효한 역할인지 런타임 검증 */
+const VALID_ROLES: UserRole[] = ['leader', 'member', 'user'];
+function isValidRole(value: unknown): value is UserRole {
+  return typeof value === 'string' && VALID_ROLES.includes(value as UserRole);
+}
+
+/** Supabase User → UserProfile 변환 (런타임 타입 검증 포함) */
 function toUserProfile(user: { id: string; email?: string; user_metadata?: Record<string, unknown>; created_at?: string }): UserProfile {
+  const meta = user.user_metadata ?? {};
   return {
     id: user.id,
     email: user.email ?? '',
-    displayName: (user.user_metadata?.display_name as string) ?? null,
-    avatarUrl: (user.user_metadata?.avatar_url as string) ?? null,
+    displayName: typeof meta.display_name === 'string' ? meta.display_name : null,
+    avatarUrl: typeof meta.avatar_url === 'string' ? meta.avatar_url : null,
     createdAt: user.created_at ?? new Date().toISOString(),
+    role: isValidRole(meta.role) ? meta.role : 'user',
   };
 }
 
@@ -42,6 +51,17 @@ export async function register({ email, password, displayName }: RegisterRequest
   if (!data.user) throw new Error('회원가입에 실패했습니다.');
 
   return toUserProfile(data.user);
+}
+
+/** Google OAuth 로그인 */
+export async function loginWithGoogle(): Promise<void> {
+  const { error } = await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: {
+      redirectTo: window.location.origin,
+    },
+  });
+  if (error) throw new Error(error.message);
 }
 
 /** 로그아웃 */

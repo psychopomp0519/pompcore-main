@@ -13,6 +13,9 @@ import PatchNotes from '../pages/PatchNotes/PatchNotes';
 import Announcements from '../pages/Announcements/Announcements';
 import Login from '../pages/Auth/Login';
 import Register from '../pages/Auth/Register';
+import Recruit from '../pages/Recruit/Recruit';
+import RecruitAdmin from '../pages/Recruit/RecruitAdmin';
+import ProjectOverview from '../pages/Internal/ProjectOverview';
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +37,18 @@ export const router = createBrowserRouter([
   {
     path: '/announcements',
     element: <Layout><Announcements /></Layout>,
+  },
+  {
+    path: '/recruit',
+    element: <Layout><Recruit /></Layout>,
+  },
+  {
+    path: '/recruit/admin',
+    element: <Layout><RecruitAdmin /></Layout>,
+  },
+  {
+    path: '/internal/overview',
+    element: <Layout><ProjectOverview /></Layout>,
   },
   {
     path: '/auth/login',

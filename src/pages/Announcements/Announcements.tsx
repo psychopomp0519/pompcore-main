@@ -6,6 +6,7 @@
 import { useState } from 'react';
 import { ANNOUNCEMENTS, ANNOUNCEMENT_CATEGORY_CONFIG } from '../../constants/announcements';
 import type { Announcement } from '../../constants/announcements';
+import { DynamicIcon } from '../../components/icons/Icons';
 
 /** 공지사항 카드 */
 function AnnouncementCard({ announcement }: { announcement: Announcement }) {
@@ -19,7 +20,9 @@ function AnnouncementCard({ announcement }: { announcement: Announcement }) {
     >
       <div className="flex items-start gap-4">
         {/* 카테고리 아이콘 */}
-        <span className="text-2xl flex-shrink-0 mt-0.5">{categoryConfig.icon}</span>
+        <span className="flex-shrink-0 mt-0.5 text-[#7C3AED] dark:text-[#A78BFA]">
+          <DynamicIcon name={categoryConfig.icon} size={24} fallback={categoryConfig.icon} />
+        </span>
 
         <div className="flex-1 min-w-0">
           {/* 상단: 배지 + 날짜 */}
@@ -95,11 +98,17 @@ export default function Announcements() {
       </div>
 
       {/* 공지 목록 */}
-      <div className="space-y-4">
-        {sortedAnnouncements.map((announcement) => (
-          <AnnouncementCard key={announcement.id} announcement={announcement} />
-        ))}
-      </div>
+      {sortedAnnouncements.length === 0 ? (
+        <div className="text-center py-16">
+          <p className="text-slate-400 dark:text-slate-500">등록된 공지사항이 없습니다.</p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {sortedAnnouncements.map((announcement) => (
+            <AnnouncementCard key={announcement.id} announcement={announcement} />
+          ))}
+        </div>
+      )}
     </section>
   );
 }

@@ -26,22 +26,22 @@ export const ANNOUNCEMENT_CATEGORY_CONFIG: Record<
   notice: {
     label: '공지',
     color: 'bg-blue-100 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400',
-    icon: '📢',
+    icon: 'megaphone',
   },
   update: {
     label: '업데이트',
     color: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-500/20 dark:text-emerald-400',
-    icon: '🚀',
+    icon: 'rocket',
   },
   event: {
     label: '이벤트',
     color: 'bg-purple-100 text-purple-700 dark:bg-purple-500/20 dark:text-purple-400',
-    icon: '🎉',
+    icon: 'celebration',
   },
   maintenance: {
     label: '점검',
     color: 'bg-amber-100 text-amber-700 dark:bg-amber-500/20 dark:text-amber-400',
-    icon: '🔧',
+    icon: 'wrench',
   },
 };
 

@@ -1,5 +1,34 @@
 # 디자인 결정 기록
 
+## 2026-03-05: Nebula 테마 리뉴얼 (v0.4.0)
+
+### 변경 사항
+- **컬러**: Indigo 기반 → Violet(#7C3AED) + Gold(#FFD700) + Pink(#EC4899)
+- **폰트**: Cinzel / Cinzel Decorative 디스플레이 폰트 추가
+- **다크 모드 배경**: 3단계 (dark-1: #0C0818, dark-2: #110D20, dark-3: #150F28)
+- **text-gradient**: violet → gold → pink 그라디언트
+
+### 아이콘 시스템
+- 이모지 → 16종 커스텀 SVG 아이콘 컴포넌트 전면 교체
+- DynamicIcon 공통 컴포넌트로 IIFE 패턴 통일
+- ICON_MAP 레지스트리 기반 동적 렌더링
+
+### 브랜드 텍스트
+- BrandText 컴포넌트: 서비스명을 Cinzel + 고유 컬러로 렌더링
+- PompCoreLogo: "POMP"(네이비) + "CORE"(그라디언트) 분리 표기
+
+### 랜딩 페이지
+- 6섹션 구조: Hero → Services → Why → Upcoming → FAQ → CTA
+- 의식형(Ceremonial) HeroSection: 엠블럼, 장식 프레임, 별 파티클
+- section-divider-gradient 섹션 구분선
+
+### 근거
+- 판타지 RPG(Genshin Impact 스타일) 분위기로 브랜드 차별화
+- Violet 기반 팔레트가 게이미피케이션 컨셉에 부합
+- SVG 아이콘으로 일관된 비주얼 + 크기/색상 제어 용이
+
+---
+
 ## 2026-03-04: 메인 페이지 디자인 채택
 
 ### 후보

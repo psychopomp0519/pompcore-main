@@ -36,6 +36,28 @@ export const CHANGE_TYPE_CONFIG: Record<
 /** 패치노트 목록 (최신순) */
 export const PATCH_NOTES: PatchNote[] = [
   {
+    version: '0.4.0',
+    date: '2026-03-05',
+    summary: 'Nebula 테마 디자인 리뉴얼 + 팀원 모집 시스템',
+    changes: [
+      { type: 'added', description: 'Nebula 컬러 팔레트 전면 교체 (Violet + Gold + Pink)' },
+      { type: 'added', description: 'Cinzel / Cinzel Decorative 디스플레이 폰트 도입' },
+      { type: 'added', description: '랜딩 페이지 6섹션 재구성 (Hero, Services, Why, Upcoming, FAQ, CTA)' },
+      { type: 'added', description: '16종 SVG 아이콘 시스템 + DynamicIcon 공통 컴포넌트' },
+      { type: 'added', description: 'BrandText / PompCoreLogo 브랜드 텍스트 컴포넌트' },
+      { type: 'added', description: '팀원 모집 페이지 (/recruit) + 지원서 양식' },
+      { type: 'added', description: '관리자 지원서 열람 페이지 (/recruit/admin)' },
+      { type: 'added', description: 'FAQ 아코디언 섹션 (grid-rows CSS 트랜지션)' },
+      { type: 'added', description: 'Upcoming 서비스 소개 섹션' },
+      { type: 'changed', description: '전체 디자인 시스템 Indigo → Nebula(Violet) 전환' },
+      { type: 'changed', description: '이모지 아이콘 → 커스텀 SVG 아이콘 전면 교체' },
+      { type: 'fixed', description: '관리자 비밀번호 하드코딩 → .env 환경변수 분리' },
+      { type: 'fixed', description: 'HeroSection gradient 클래스 중복 제거' },
+      { type: 'removed', description: 'FeaturesSection.tsx (WhySection으로 대체)' },
+      { type: 'removed', description: 'ProjectsPreview.tsx (ServicesSection으로 대체)' },
+    ],
+  },
+  {
     version: '0.3.0',
     date: '2026-03-04',
     summary: '패치노트 및 공지사항 페이지 추가',

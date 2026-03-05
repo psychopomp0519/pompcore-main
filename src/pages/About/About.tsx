@@ -3,20 +3,22 @@
  * - PompCore 비전, 미션, 팀 소개 등
  */
 import GlassCard from '../../components/common/GlassCard';
+import { TargetIcon, LinkIcon, ProtectIcon } from '../../components/icons/Icons';
+import type { IconProps } from '../../components/icons/Icons';
 
-const VALUES = [
+const VALUES: { IconComponent: React.ComponentType<IconProps>; title: string; description: string }[] = [
   {
-    icon: '🎯',
+    IconComponent: TargetIcon,
     title: '사용자 중심',
     description: '모든 기능은 사용자의 실제 필요에서 시작합니다.',
   },
   {
-    icon: '🔗',
+    IconComponent: LinkIcon,
     title: '통합 경험',
     description: '하나의 계정으로 모든 서비스를 자연스럽게 연결합니다.',
   },
   {
-    icon: '🛡️',
+    IconComponent: ProtectIcon,
     title: '신뢰와 보안',
     description: '개인 정보 보호와 데이터 보안을 최우선으로 합니다.',
   },
@@ -43,7 +45,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {VALUES.map((value) => (
             <GlassCard key={value.title} padding="lg">
-              <span className="text-3xl mb-4 block">{value.icon}</span>
+              <span className="text-[#7C3AED] dark:text-[#A78BFA] mb-4 block"><value.IconComponent size={32} /></span>
               <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
               <p className="text-sm text-slate-400">{value.description}</p>
             </GlassCard>

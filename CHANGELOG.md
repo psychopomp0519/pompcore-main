@@ -2,6 +2,56 @@
 
 모든 버전별 상세 패치노트는 [docs/patchnotes/](docs/patchnotes/) 폴더를 참조하세요.
 
+## [0.4.3] - 2026-03-05
+
+프로젝트 검증 기반 품질 개선 (11건)
+
+- hasPermission() null/undefined 방어 처리
+- OAuth isLoading 상태 복구 (에러·정상 모두 false로 리셋)
+- FAQ 금색 Q 아이콘 라이트 모드 WCAG AA 대비율 개선 (#B8860B)
+- VITE_ADMIN_PASSWORD 제거 → RoleGuard 기반 접근 제어로 전환
+- user_metadata 런타임 타입 검증 (as 캐스팅 → typeof 가드)
+- ErrorBoundary 컴포넌트 추가 + App.tsx 래핑
+- 5개 페이지 빈 상태(Empty State) UI 추가
+- Recruit.tsx → RecruitPositions.tsx 컴포넌트 분리
+- recruitStorage.ts 공통 서비스 추출 (Recruit + RecruitAdmin 공유)
+- recruitment.ts 이모지 → SVG 아이콘 전환 (PaletteIcon, ClipboardIcon, CodeIcon 추가)
+
+## [0.4.2] - 2026-03-05
+
+Google 소셜 로그인 + 인증 UI 개선
+
+- Google OAuth 로그인 지원 (Supabase signInWithOAuth)
+- 로그인/회원가입 페이지 authStore 실제 연동 (기존 TODO 코드 제거)
+- GoogleIcon SVG 컴포넌트 추가
+- 로그인/회원가입 폼 라이트 모드 대응 (input, label, error 스타일)
+- "또는" 구분선 UI로 소셜/이메일 로그인 시각 분리
+
+## [0.4.1] - 2026-03-05
+
+권한 체계 + 프로젝트 개요 페이지 + 라이트 모드 가시성 개선
+
+- 역할 기반 권한 체계 (팀장/팀원/사용자) + RoleGuard 접근 제어 컴포넌트
+- 프로젝트 개요 열람 페이지 (/internal/overview) — 팀원 이상 접근
+- patchnotes.ts v0.4.0 데이터 등록
+- 라이트 모드 텍스트 WCAG AA 대비율 개선 (10개 파일, 56건)
+- text-gradient 라이트 모드 진한 톤 조정
+- 프로젝트 검증 프로토콜 확장 (코드 흐름 추적, 편의성 검증)
+
+## [0.4.0] - 2026-03-05
+
+Nebula 테마 디자인 리뉴얼 + 팀원 모집 시스템
+
+- Nebula 컬러 팔레트 전면 교체 (Violet + Gold + Pink)
+- Cinzel 디스플레이 폰트 도입
+- 랜딩 페이지 6섹션 재구성 (Hero, Services, Why, Upcoming, FAQ, CTA)
+- 16종 SVG 아이콘 시스템 + DynamicIcon 공통 컴포넌트
+- BrandText/PompCoreLogo 브랜드 텍스트 컴포넌트
+- 팀원 모집 페이지 (/recruit) + 관리자 열람 (/recruit/admin)
+- 코드 품질 개선 (환경변수 분리, 타입 개선, CSS 트랜지션)
+
+상세: [docs/patchnotes/v0.4.0.md](docs/patchnotes/v0.4.0.md)
+
 ## [0.3.0] - 2026-03-04
 
 패치노트/공지사항 페이지 + UI/UX 접근성 개선

@@ -7,6 +7,7 @@
 import type { Project } from '../../types/project.types';
 import { PROJECT_STATUS_LABELS } from '../../constants/projects';
 import GlassCard from '../common/GlassCard';
+import { DynamicIcon } from '../icons/Icons';
 
 interface ProjectCardProps {
   project: Project;
@@ -50,7 +51,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {logoSrc ? (
           <img src={logoSrc} alt={name} className="h-10 w-10 dark:invert" />
         ) : (
-          <span className="text-4xl">{icon}</span>
+          <span className={accentColor}><DynamicIcon name={icon} size={40} fallback={icon} /></span>
         )}
         <span className={`text-xs font-medium px-3 py-1 rounded-full ${statusStyles[status] ?? ''}`}>
           {statusLabel}

@@ -30,6 +30,11 @@ export default function PatchNotes() {
       </div>
 
       {/* 타임라인 */}
+      {PATCH_NOTES.length === 0 ? (
+        <div className="text-center py-16">
+          <p className="text-slate-400 dark:text-slate-500">등록된 패치노트가 없습니다.</p>
+        </div>
+      ) : (
       <div className="space-y-8">
         {PATCH_NOTES.map((note, idx) => (
           <article
@@ -72,6 +77,7 @@ export default function PatchNotes() {
           </article>
         ))}
       </div>
+      )}
     </section>
   );
 }

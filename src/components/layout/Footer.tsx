@@ -5,6 +5,8 @@
  */
 import { Link } from 'react-router-dom';
 import { PROJECTS } from '../../constants/projects';
+import { DynamicIcon } from '../icons/Icons';
+import { PompCoreLogo } from '../common/BrandText';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +17,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* 회사 정보 */}
           <div>
-            <h3 className="text-lg font-bold text-gradient mb-3">PompCore</h3>
+            <h3 className="mb-3"><PompCoreLogo size="text-lg" /></h3>
             <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
               일상을 더 스마트하게 만드는<br />
               디지털 서비스 플랫폼
@@ -32,7 +34,10 @@ export default function Footer() {
                     to={`/projects#${project.id}`}
                     className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
                   >
-                    {project.icon} {project.name}
+                    <span className="inline-flex items-center gap-1.5">
+                      <DynamicIcon name={project.icon} size={14} fallback={project.icon} />
+                      {project.name}
+                    </span>
                   </Link>
                 </li>
               ))}

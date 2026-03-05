@@ -13,6 +13,8 @@ interface AuthActions {
   initialize: () => Promise<void>;
   /** 로그인 */
   login: (request: LoginRequest) => Promise<void>;
+  /** Google OAuth 로그인 */
+  loginWithGoogle: () => Promise<void>;
   /** 회원가입 */
   register: (request: RegisterRequest) => Promise<void>;
   /** 로그아웃 */
@@ -45,6 +47,19 @@ export const useAuthStore = create<AuthStore>((set) => ({
       set({ user, isLoading: false });
     } catch (err) {
       const message = err instanceof Error ? err.message : '로그인에 실패했습니다.';
+      set({ error: message, isLoading: false });
+      throw err;
+    }
+  },
+
+  loginWithGoogle: async () => {
+    set({ isLoading: true, error: null });
+    try {
+      await authService.loginWithGoogle();
+      /* OAuth 리다이렉트 방식 — 성공 시 브라우저가 Google로 이동됨 */
+      set({ isLoading: false });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Google 로그인에 실패했습니다.';
       set({ error: message, isLoading: false });
       throw err;
     }

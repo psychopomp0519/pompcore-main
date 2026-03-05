@@ -5,7 +5,7 @@
  */
 
 /* Google Fonts (반드시 @tailwind보다 먼저 선언) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Cinzel+Decorative:wght@700;900&display=swap');
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 
 @tailwind base;
@@ -28,7 +28,7 @@
 
   /* 다크 모드: 오프화이트 텍스트 (순백 → 눈 피로 감소) */
   .dark body {
-    @apply bg-surface-dark;
+    background-color: #0C0818;
     color: #e2e8f0;
   }
 
@@ -75,12 +75,12 @@
     @apply bg-surface-card-dark border-white/10;
   }
 
-  /* 그라디언트 텍스트 */
+  /* 그라디언트 텍스트 (Nebula 팔레트) — 라이트 모드에서 진한 톤 */
   .text-gradient {
-    @apply bg-gradient-to-r from-brand-500 to-purple-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#9B59B6] via-[#D4A017] to-[#E0598B] bg-clip-text text-transparent;
   }
   .dark .text-gradient {
-    @apply from-brand-400 to-purple-400;
+    @apply from-[#E0C0FF] via-[#FFD700] to-[#FF90D0];
   }
 
   /* 호버 시 스케일업 효과 */
@@ -90,6 +90,16 @@
   .dark .hover-lift {
     @apply hover:shadow-glow;
   }
+}
+
+/* 섹션 간 그라디언트 구분선 유틸리티 */
+.section-divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 5%, rgba(124,58,237,0.2) 30%, rgba(255,215,0,0.12) 50%, rgba(124,58,237,0.2) 70%, transparent 95%);
+}
+.section-divider-gradient-thick {
+  height: 2px;
+  background: linear-gradient(90deg, transparent 5%, rgba(124,58,237,0.25) 30%, rgba(255,215,0,0.15) 50%, rgba(124,58,237,0.25) 70%, transparent 95%);
 }
 
 /* 모션 감소 선호 사용자 대응 (Apple HIG 필수 요구사항) */

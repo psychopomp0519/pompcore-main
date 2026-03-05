@@ -9,6 +9,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Button from '../common/Button';
 import { useThemeStore } from '../../store/themeStore';
 import pompcoreLogo from '../../assets/logos/pompcorelogo.svg';
+import { PompCoreLogo } from '../common/BrandText';
 
 /** 네비게이션 메뉴 항목 (확장 시 여기에 추가) */
 const NAV_ITEMS = [
@@ -17,6 +18,7 @@ const NAV_ITEMS = [
   { label: '공지사항', path: '/announcements' },
   { label: '패치노트', path: '/patchnotes' },
   { label: '소개', path: '/about' },
+  { label: '팀원 모집', path: '/recruit' },
 ];
 
 export default function Header() {
@@ -42,7 +44,7 @@ export default function Header() {
       className={`
         fixed top-0 left-0 right-0 z-50 transition-all duration-300
         ${isScrolled
-          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm border-b border-slate-200 dark:border-white/10 py-3'
+          ? 'bg-white/80 dark:bg-[#0C0818]/80 backdrop-blur-xl shadow-sm border-b border-slate-200 dark:border-white/10 py-3'
           : 'bg-transparent py-5'
         }
       `}
@@ -51,7 +53,7 @@ export default function Header() {
         {/* 로고 */}
         <Link to="/" className="flex items-center gap-2 group">
           <img src={pompcoreLogo} alt="PompCore" className="h-8 w-8 dark:invert" />
-          <span className="text-xl font-bold text-navy dark:text-white">PompCore</span>
+          <PompCoreLogo />
         </Link>
 
         {/* 데스크톱 네비게이션 */}
