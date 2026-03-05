@@ -53,26 +53,67 @@ export default function HeroSection() {
       <div className="absolute bottom-[15%] right-[10%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.08] dark:bg-[#FFD700]/[0.025] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[5%] w-[200px] md:w-[300px] lg:w-[350px] h-[200px] md:h-[300px] lg:h-[350px] bg-[#E0F0FF]/[0.15] dark:bg-[#EC4899]/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
-      {/* === 구름 장식 (라이트 모드 전용) === */}
+      {/* === 구름 장식 (라이트 모드 전용) — 여러 레이어로 입체감 === */}
       <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        <div className="absolute top-[8%] left-[15%] w-[120px] md:w-[200px] h-[40px] md:h-[60px] bg-white/40 rounded-full blur-[20px]" />
-        <div className="absolute top-[15%] right-[20%] w-[150px] md:w-[250px] h-[50px] md:h-[70px] bg-white/30 rounded-full blur-[25px]" />
-        <div className="absolute top-[25%] left-[40%] w-[100px] md:w-[180px] h-[35px] md:h-[50px] bg-white/35 rounded-full blur-[18px]" />
-        <div className="absolute bottom-[30%] right-[10%] w-[130px] md:w-[220px] h-[45px] md:h-[65px] bg-white/25 rounded-full blur-[22px]" />
-        <div className="absolute bottom-[15%] left-[25%] w-[160px] md:w-[260px] h-[50px] md:h-[70px] bg-white/30 rounded-full blur-[28px]" />
+        {/* 큰 구름 레이어 (뒤쪽, 연하게) */}
+        <div className="absolute top-[6%] left-[10%] w-[200px] md:w-[360px] h-[60px] md:h-[90px] bg-white/50 rounded-full blur-[30px]" />
+        <div className="absolute top-[12%] right-[8%] w-[220px] md:w-[380px] h-[65px] md:h-[100px] bg-white/45 rounded-full blur-[35px]" />
+        <div className="absolute bottom-[18%] left-[15%] w-[240px] md:w-[400px] h-[70px] md:h-[100px] bg-white/40 rounded-full blur-[32px]" />
+        {/* 중간 구름 레이어 */}
+        <div className="absolute top-[9%] left-[20%] w-[140px] md:w-[250px] h-[45px] md:h-[65px] bg-white/60 rounded-full blur-[18px]" />
+        <div className="absolute top-[18%] right-[18%] w-[160px] md:w-[280px] h-[50px] md:h-[75px] bg-white/55 rounded-full blur-[20px]" />
+        <div className="absolute top-[30%] left-[35%] w-[130px] md:w-[220px] h-[40px] md:h-[60px] bg-white/50 rounded-full blur-[16px]" />
+        <div className="absolute bottom-[25%] right-[12%] w-[150px] md:w-[260px] h-[50px] md:h-[70px] bg-white/55 rounded-full blur-[18px]" />
+        {/* 작은 구름 (앞쪽, 진하게) */}
+        <div className="absolute top-[7%] left-[30%] w-[80px] md:w-[140px] h-[30px] md:h-[45px] bg-white/70 rounded-full blur-[10px]" />
+        <div className="absolute top-[22%] right-[30%] w-[90px] md:w-[150px] h-[35px] md:h-[50px] bg-white/65 rounded-full blur-[12px]" />
+        <div className="absolute bottom-[30%] left-[50%] w-[70px] md:w-[120px] h-[28px] md:h-[40px] bg-white/60 rounded-full blur-[10px]" />
       </div>
 
-      {/* === 별 파티클 (다크 모드 전용) === */}
+      {/* === 별 파티클 (다크 모드 전용) — 다양한 크기 + 밝기 === */}
       <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
-        {Array.from({ length: 12 }).map((_, i) => (
+        {/* 작은 별 (2px) */}
+        {Array.from({ length: 25 }).map((_, i) => (
           <span
-            key={i}
+            key={`s-${i}`}
             className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle"
             style={{
-              top: `${8 + (i * 7.3) % 85}%`,
-              left: `${5 + (i * 11.7) % 90}%`,
-              animationDelay: `${(i * 0.33).toFixed(2)}s`,
-              opacity: 0.3 + (i % 3) * 0.2,
+              top: `${3 + (i * 3.7) % 92}%`,
+              left: `${2 + (i * 4.1) % 95}%`,
+              animationDelay: `${(i * 0.17).toFixed(2)}s`,
+              opacity: 0.2 + (i % 4) * 0.15,
+            }}
+          />
+        ))}
+        {/* 중간 별 (3px) */}
+        {Array.from({ length: 12 }).map((_, i) => (
+          <span
+            key={`m-${i}`}
+            className="absolute w-[3px] h-[3px] bg-white rounded-full animate-twinkle"
+            style={{
+              top: `${5 + (i * 8.3) % 88}%`,
+              left: `${4 + (i * 7.9) % 92}%`,
+              animationDelay: `${(i * 0.41).toFixed(2)}s`,
+              opacity: 0.4 + (i % 3) * 0.2,
+            }}
+          />
+        ))}
+        {/* 밝은 큰 별 (4px, 글로우 효과) */}
+        {[
+          { top: '8%', left: '15%' },
+          { top: '20%', left: '78%' },
+          { top: '45%', left: '92%' },
+          { top: '65%', left: '8%' },
+          { top: '80%', left: '55%' },
+        ].map((pos, i) => (
+          <span
+            key={`b-${i}`}
+            className="absolute w-[4px] h-[4px] bg-white rounded-full animate-twinkle"
+            style={{
+              ...pos,
+              animationDelay: `${(i * 0.8).toFixed(2)}s`,
+              opacity: 0.8,
+              boxShadow: '0 0 6px 2px rgba(255,255,255,0.4)',
             }}
           />
         ))}

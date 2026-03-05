@@ -15,7 +15,14 @@ export default function UpcomingSection() {
       <div className="absolute top-[10%] right-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-[#87CEEB]/[0.08] dark:bg-[#FFD700]/[0.03] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-[#B0E0FF]/[0.1] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[100px] pointer-events-none" />
       {/* 구름 (라이트 전용) */}
-      <div className="dark:hidden absolute top-[6%] left-[20%] w-[160px] md:w-[250px] h-[50px] md:h-[70px] bg-white/35 rounded-full blur-[22px] pointer-events-none" />
+      <div className="dark:hidden absolute top-[6%] left-[20%] w-[180px] md:w-[300px] h-[55px] md:h-[80px] bg-white/55 rounded-full blur-[18px] pointer-events-none" />
+      <div className="dark:hidden absolute bottom-[12%] right-[15%] w-[150px] md:w-[250px] h-[48px] md:h-[68px] bg-white/50 rounded-full blur-[16px] pointer-events-none" />
+      {/* 별 (다크 전용) */}
+      <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <span key={i} className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle" style={{ top: `${7 + (i * 8.5) % 84}%`, left: `${5 + (i * 9.3) % 89}%`, animationDelay: `${(i * 0.29).toFixed(2)}s`, opacity: 0.2 + (i % 3) * 0.15 }} />
+        ))}
+      </div>
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* 헤더 */}

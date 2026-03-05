@@ -52,8 +52,18 @@ export default function ServicesSection() {
       <div className="absolute top-[10%] left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.1] dark:bg-[#10B981]/[0.05] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#87CEEB]/[0.08] dark:bg-[#7C3AED]/[0.06] rounded-full blur-[120px] pointer-events-none" />
       {/* 구름 (라이트 전용) */}
-      <div className="dark:hidden absolute top-[5%] right-[15%] w-[150px] md:w-[240px] h-[50px] md:h-[70px] bg-white/40 rounded-full blur-[22px] pointer-events-none" />
-      <div className="dark:hidden absolute bottom-[8%] left-[10%] w-[180px] md:w-[280px] h-[55px] md:h-[75px] bg-white/30 rounded-full blur-[25px] pointer-events-none" />
+      <div className="dark:hidden absolute top-[5%] right-[15%] w-[180px] md:w-[300px] h-[55px] md:h-[80px] bg-white/55 rounded-full blur-[20px] pointer-events-none" />
+      <div className="dark:hidden absolute bottom-[8%] left-[10%] w-[200px] md:w-[320px] h-[60px] md:h-[85px] bg-white/50 rounded-full blur-[22px] pointer-events-none" />
+      <div className="dark:hidden absolute top-[15%] left-[30%] w-[120px] md:w-[200px] h-[40px] md:h-[55px] bg-white/60 rounded-full blur-[14px] pointer-events-none" />
+      {/* 별 (다크 전용) */}
+      <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
+        {Array.from({ length: 15 }).map((_, i) => (
+          <span key={i} className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle" style={{ top: `${5 + (i * 6.2) % 88}%`, left: `${3 + (i * 6.7) % 93}%`, animationDelay: `${(i * 0.27).toFixed(2)}s`, opacity: 0.2 + (i % 3) * 0.15 }} />
+        ))}
+        {[{ top: '12%', left: '85%' }, { top: '70%', left: '10%' }].map((pos, i) => (
+          <span key={`b-${i}`} className="absolute w-[3px] h-[3px] bg-white rounded-full animate-twinkle" style={{ ...pos, animationDelay: `${(i * 1.2).toFixed(2)}s`, opacity: 0.7, boxShadow: '0 0 4px 1px rgba(255,255,255,0.3)' }} />
+        ))}
+      </div>
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* 헤더 */}

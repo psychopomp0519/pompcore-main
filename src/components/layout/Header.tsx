@@ -52,7 +52,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* 로고 */}
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={pompcoreLogo} alt="PompCore" className="h-8 w-8 dark:invert" />
+          <img src={pompcoreLogo} alt="PompCore" className="h-8 w-8 mix-blend-multiply dark:mix-blend-normal dark:invert" />
           <PompCoreLogo />
         </Link>
 

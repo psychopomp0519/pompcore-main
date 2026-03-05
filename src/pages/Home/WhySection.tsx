@@ -40,7 +40,14 @@ export default function WhySection() {
       {/* 배경 글로우 */}
       <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.1] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[120px] pointer-events-none" />
       {/* 구름 (라이트 전용) */}
-      <div className="dark:hidden absolute top-[12%] right-[8%] w-[140px] md:w-[220px] h-[45px] md:h-[60px] bg-white/35 rounded-full blur-[20px] pointer-events-none" />
+      <div className="dark:hidden absolute top-[12%] right-[8%] w-[170px] md:w-[280px] h-[50px] md:h-[75px] bg-white/55 rounded-full blur-[18px] pointer-events-none" />
+      <div className="dark:hidden absolute bottom-[15%] left-[20%] w-[140px] md:w-[230px] h-[45px] md:h-[65px] bg-white/50 rounded-full blur-[16px] pointer-events-none" />
+      {/* 별 (다크 전용) */}
+      <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <span key={i} className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle" style={{ top: `${6 + (i * 9.1) % 86}%`, left: `${4 + (i * 9.7) % 91}%`, animationDelay: `${(i * 0.33).toFixed(2)}s`, opacity: 0.25 + (i % 3) * 0.15 }} />
+        ))}
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* 헤더 */}

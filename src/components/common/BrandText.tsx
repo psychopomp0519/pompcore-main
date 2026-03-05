@@ -3,9 +3,9 @@
  * - PompCore, Vault, Quest 등 서비스 이름을 SVG 로고로 렌더링
  * - 사이트 전체에서 일관된 브랜드 표현 유지
  */
-import pompcoreLogo from '../../assets/logos/pompcorelogo.svg';
-import vaultLogo from '../../assets/logos/vaultlogo.svg';
-import questLogo from '../../assets/logos/questlogo.svg';
+import pompcoreLogo from '../../assets/logos/pompcore.svg';
+import vaultLogo from '../../assets/logos/vault.svg';
+import questLogo from '../../assets/logos/quest.svg';
 
 interface BrandTextProps {
   /** 렌더링할 브랜드 이름 (등록된 키 또는 확장 가능한 string) */
@@ -59,7 +59,7 @@ export default function BrandText({ brand, size = 'text-lg', className = '' }: B
       <img
         src={config.logo}
         alt={config.label}
-        className={`inline-block ${className}`}
+        className={`inline-block mix-blend-multiply dark:mix-blend-normal dark:invert ${className}`}
         style={{ height: `${height}px`, width: 'auto' }}
       />
     );
@@ -84,7 +84,7 @@ export function PompCoreLogo({ size = 'text-xl', className = '' }: { size?: stri
     <img
       src={pompcoreLogo}
       alt="POMPCORE"
-      className={`inline-block ${className}`}
+      className={`inline-block mix-blend-multiply dark:mix-blend-normal dark:invert ${className}`}
       style={{ height: `${height}px`, width: 'auto' }}
     />
   );

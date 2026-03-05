@@ -16,6 +16,15 @@ export default function FaqSection() {
 
   return (
     <section className="bg-gradient-to-b from-[#F0F7FF] to-[#FAF8FF] dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
+      {/* 구름 (라이트 전용) */}
+      <div className="dark:hidden absolute top-[10%] right-[12%] w-[160px] md:w-[260px] h-[50px] md:h-[72px] bg-white/50 rounded-full blur-[18px] pointer-events-none" />
+      <div className="dark:hidden absolute bottom-[15%] left-[8%] w-[130px] md:w-[220px] h-[42px] md:h-[60px] bg-white/45 rounded-full blur-[16px] pointer-events-none" />
+      {/* 별 (다크 전용) */}
+      <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
+        {Array.from({ length: 8 }).map((_, i) => (
+          <span key={i} className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle" style={{ top: `${8 + (i * 10.5) % 82}%`, left: `${6 + (i * 11.3) % 87}%`, animationDelay: `${(i * 0.35).toFixed(2)}s`, opacity: 0.2 + (i % 3) * 0.15 }} />
+        ))}
+      </div>
       <div className="max-w-[640px] mx-auto px-4 sm:px-6 relative z-10">
         {/* 헤더 */}
         <div className="text-center mb-12">

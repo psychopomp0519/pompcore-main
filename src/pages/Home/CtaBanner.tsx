@@ -7,8 +7,16 @@ import { Link } from 'react-router-dom';
 
 export default function CtaBanner() {
   return (
-    <section className="bg-surface-light dark:bg-surface-dark-3 py-24">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="bg-surface-light dark:bg-surface-dark-3 relative overflow-hidden py-24">
+      {/* 구름 (라이트 전용) */}
+      <div className="dark:hidden absolute top-[15%] left-[10%] w-[150px] md:w-[240px] h-[48px] md:h-[68px] bg-white/40 rounded-full blur-[18px] pointer-events-none" />
+      {/* 별 (다크 전용) */}
+      <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
+        {Array.from({ length: 6 }).map((_, i) => (
+          <span key={i} className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle" style={{ top: `${10 + (i * 13) % 78}%`, left: `${8 + (i * 14.3) % 83}%`, animationDelay: `${(i * 0.4).toFixed(2)}s`, opacity: 0.2 + (i % 3) * 0.12 }} />
+        ))}
+      </div>
+      <div className="max-w-5xl mx-auto px-6 relative z-10">
         <div className="relative overflow-hidden rounded-[20px] p-6 sm:p-10 md:px-10 md:py-14 text-center">
           {/* 배경 그라디언트 */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] to-[#A855F7] opacity-[0.92]" />
