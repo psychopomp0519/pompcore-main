@@ -9,7 +9,7 @@ export default function CtaBanner() {
   return (
     <section className="bg-surface-light dark:bg-surface-dark-3 py-24">
       <div className="max-w-5xl mx-auto px-6">
-        <div className="relative overflow-hidden rounded-[20px] p-14 md:px-10 md:py-14 text-center">
+        <div className="relative overflow-hidden rounded-[20px] p-6 sm:p-10 md:px-10 md:py-14 text-center">
           {/* 배경 그라디언트 */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] to-[#A855F7] opacity-[0.92]" />
           {/* 골드 radial 오버레이 */}

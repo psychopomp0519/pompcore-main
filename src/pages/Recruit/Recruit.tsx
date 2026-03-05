@@ -57,7 +57,7 @@ export default function Recruit() {
       <div className="max-w-5xl mx-auto px-6 py-24">
         {/* 페이지 헤더 */}
         <div className="text-center mb-16">
-          <h1 className="font-display text-[32px] font-bold text-[#1A1A2E] dark:text-white mb-4">
+          <h1 className="font-display text-[24px] md:text-[32px] font-bold text-[#1A1A2E] dark:text-white mb-4">
             함께할 <span className="text-gradient">모험가</span>를 찾습니다
           </h1>
           <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490] max-w-xl mx-auto leading-relaxed">

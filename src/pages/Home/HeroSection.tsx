@@ -45,13 +45,22 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-surface-light dark:bg-surface-dark-1"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#E8F4FD] via-[#F0F7FF] to-[#FAF8FF] dark:from-surface-dark-1 dark:via-surface-dark-1 dark:to-surface-dark-1"
       aria-label="히어로 영역"
     >
-      {/* === 배경 글로우 오브 === */}
-      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#7C3AED]/[0.07] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[15%] right-[10%] w-[400px] h-[400px] bg-[#FFD700]/[0.025] rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[20%] left-[5%] w-[350px] h-[350px] bg-[#EC4899]/[0.03] rounded-full blur-[100px] pointer-events-none" />
+      {/* === 배경 글로우 오브 (다크: 별밤 글로우 / 라이트: 하늘빛 글로우) === */}
+      <div className="absolute top-[10%] left-1/2 -translate-x-1/2 w-[300px] md:w-[500px] lg:w-[600px] h-[300px] md:h-[500px] lg:h-[600px] bg-[#87CEEB]/[0.12] dark:bg-[#7C3AED]/[0.07] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[15%] right-[10%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.08] dark:bg-[#FFD700]/[0.025] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[5%] w-[200px] md:w-[300px] lg:w-[350px] h-[200px] md:h-[300px] lg:h-[350px] bg-[#E0F0FF]/[0.15] dark:bg-[#EC4899]/[0.03] rounded-full blur-[100px] pointer-events-none" />
+
+      {/* === 구름 장식 (라이트 모드 전용) === */}
+      <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="absolute top-[8%] left-[15%] w-[120px] md:w-[200px] h-[40px] md:h-[60px] bg-white/40 rounded-full blur-[20px]" />
+        <div className="absolute top-[15%] right-[20%] w-[150px] md:w-[250px] h-[50px] md:h-[70px] bg-white/30 rounded-full blur-[25px]" />
+        <div className="absolute top-[25%] left-[40%] w-[100px] md:w-[180px] h-[35px] md:h-[50px] bg-white/35 rounded-full blur-[18px]" />
+        <div className="absolute bottom-[30%] right-[10%] w-[130px] md:w-[220px] h-[45px] md:h-[65px] bg-white/25 rounded-full blur-[22px]" />
+        <div className="absolute bottom-[15%] left-[25%] w-[160px] md:w-[260px] h-[50px] md:h-[70px] bg-white/30 rounded-full blur-[28px]" />
+      </div>
 
       {/* === 별 파티클 (다크 모드 전용) === */}
       <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -70,7 +79,7 @@ export default function HeroSection() {
       </div>
 
       {/* === 장식 프레임 (4 코너 L자 + 상하 다이아몬드 + 가로 라인) === */}
-      <div className="absolute inset-8 md:inset-16 pointer-events-none" aria-hidden="true">
+      <div className="absolute inset-4 sm:inset-8 md:inset-16 pointer-events-none" aria-hidden="true">
         {/* 코너 L자 보더 */}
         <div className="absolute top-0 left-0 w-9 h-9 border-t-[1.5px] border-l-[1.5px] border-[#7C3AED]/[0.12] dark:border-[#7C3AED]/[0.12]" />
         <div className="absolute top-0 right-0 w-9 h-9 border-t-[1.5px] border-r-[1.5px] border-[#7C3AED]/[0.12] dark:border-[#7C3AED]/[0.12]" />

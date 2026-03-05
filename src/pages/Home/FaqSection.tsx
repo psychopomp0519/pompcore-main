@@ -15,8 +15,8 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="bg-surface-light dark:bg-surface-dark-1 relative overflow-hidden py-24">
-      <div className="max-w-[640px] mx-auto px-6 relative z-10">
+    <section className="bg-gradient-to-b from-[#F0F7FF] to-[#FAF8FF] dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
+      <div className="max-w-[640px] mx-auto px-4 sm:px-6 relative z-10">
         {/* 헤더 */}
         <div className="text-center mb-12">
           <h2 className="font-display text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">

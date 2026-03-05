@@ -36,9 +36,11 @@ const FEATURES: { IconComponent: React.ComponentType<IconProps>; title: string; 
 
 export default function WhySection() {
   return (
-    <section className="bg-surface-light dark:bg-surface-dark-1 relative overflow-hidden py-24">
+    <section className="bg-gradient-to-b from-[#FAF8FF] to-[#EEF5FD] dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
       {/* 배경 글로우 */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[400px] h-[400px] bg-[#7C3AED]/[0.04] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.1] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[120px] pointer-events-none" />
+      {/* 구름 (라이트 전용) */}
+      <div className="dark:hidden absolute top-[12%] right-[8%] w-[140px] md:w-[220px] h-[45px] md:h-[60px] bg-white/35 rounded-full blur-[20px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* 헤더 */}

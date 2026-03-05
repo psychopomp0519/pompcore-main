@@ -1,61 +1,91 @@
 /**
- * 브랜드 로고 텍스트 컴포넌트
- * - PompCore, Vault, Quest 등 서비스 이름을 브랜드 스타일로 렌더링
- * - Cinzel 폰트 + 각 서비스 고유 컬러/그라디언트
+ * 브랜드 로고 컴포넌트
+ * - PompCore, Vault, Quest 등 서비스 이름을 SVG 로고로 렌더링
  * - 사이트 전체에서 일관된 브랜드 표현 유지
  */
+import pompcoreLogo from '../../assets/logos/pompcorelogo.svg';
+import vaultLogo from '../../assets/logos/vaultlogo.svg';
+import questLogo from '../../assets/logos/questlogo.svg';
 
 interface BrandTextProps {
   /** 렌더링할 브랜드 이름 (등록된 키 또는 확장 가능한 string) */
   brand: 'pompcore' | 'vault' | 'quest' | 'academy' | (string & {});
-  /** 텍스트 크기 (Tailwind text-* 클래스) */
+  /** 텍스트 크기 (Tailwind text-* 클래스) — 로고 높이 결정에 사용 */
   size?: string;
   /** 추가 클래스 */
   className?: string;
 }
 
-/** 브랜드별 스타일 설정 */
-const BRAND_STYLES: Record<string, { text: string; gradient?: string; label: string }> = {
+/** 브랜드별 로고 및 폴백 텍스트 설정 */
+const BRAND_CONFIG: Record<string, { logo?: string; label: string; textStyle: string }> = {
   pompcore: {
-    text: '',
-    gradient: 'bg-gradient-to-r from-[#C8A0FF] via-[#FFD700] to-[#FF90D0] bg-clip-text text-transparent',
+    logo: pompcoreLogo,
     label: 'POMPCORE',
+    textStyle: 'bg-gradient-to-r from-[#C8A0FF] via-[#FFD700] to-[#FF90D0] bg-clip-text text-transparent',
   },
   vault: {
-    text: 'text-[#10B981] dark:text-[#34D399]',
+    logo: vaultLogo,
     label: 'VAULT',
+    textStyle: 'text-[#10B981] dark:text-[#34D399]',
   },
   quest: {
-    text: 'text-[#7C3AED] dark:text-[#C084FC]',
+    logo: questLogo,
     label: 'QUEST',
+    textStyle: 'text-[#7C3AED] dark:text-[#C084FC]',
   },
   academy: {
-    text: 'text-[#FBBF24] dark:text-[#FCD34D]',
     label: 'ACADEMY',
+    textStyle: 'text-[#FBBF24] dark:text-[#FCD34D]',
   },
 };
 
-export default function BrandText({ brand, size = 'text-lg', className = '' }: BrandTextProps) {
-  const style = BRAND_STYLES[brand] ?? BRAND_STYLES.pompcore;
+/** size 클래스 → 로고 높이(px) 매핑 */
+const SIZE_TO_HEIGHT: Record<string, number> = {
+  'text-xs': 14,
+  'text-sm': 18,
+  'text-base': 22,
+  'text-lg': 26,
+  'text-xl': 30,
+  'text-2xl': 36,
+  'text-3xl': 42,
+};
 
+export default function BrandText({ brand, size = 'text-lg', className = '' }: BrandTextProps) {
+  const config = BRAND_CONFIG[brand] ?? BRAND_CONFIG.pompcore;
+  const height = SIZE_TO_HEIGHT[size] ?? 26;
+
+  if (config.logo) {
+    return (
+      <img
+        src={config.logo}
+        alt={config.label}
+        className={`inline-block ${className}`}
+        style={{ height: `${height}px`, width: 'auto' }}
+      />
+    );
+  }
+
+  // 로고 없는 브랜드는 텍스트 폴백
   return (
     <span
-      className={`font-display font-bold tracking-wide ${size} ${style.gradient ?? style.text} ${className}`}
+      className={`font-display font-bold tracking-wide ${size} ${config.textStyle} ${className}`}
     >
-      {style.label}
+      {config.label}
     </span>
   );
 }
 
 /**
- * PompCore 로고 텍스트 (POMP + CORE 분리 표기)
- * - Header 등에서 로고 텍스트로 사용
+ * PompCore 로고 (Header 등에서 사용)
  */
 export function PompCoreLogo({ size = 'text-xl', className = '' }: { size?: string; className?: string }) {
+  const height = SIZE_TO_HEIGHT[size] ?? 30;
   return (
-    <span className={`font-display font-bold tracking-wide ${size} ${className}`}>
-      <span className="text-navy dark:text-white">POMP</span>
-      <span className="text-gradient">CORE</span>
-    </span>
+    <img
+      src={pompcoreLogo}
+      alt="POMPCORE"
+      className={`inline-block ${className}`}
+      style={{ height: `${height}px`, width: 'auto' }}
+    />
   );
 }

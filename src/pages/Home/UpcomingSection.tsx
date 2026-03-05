@@ -10,10 +10,12 @@ import BrandText from '../../components/common/BrandText';
 
 export default function UpcomingSection() {
   return (
-    <section className="bg-surface-light dark:bg-surface-dark-3 relative overflow-hidden py-24">
+    <section className="bg-gradient-to-b from-[#EEF5FD] to-[#F0F7FF] dark:from-surface-dark-3 dark:to-surface-dark-3 relative overflow-hidden py-24">
       {/* 배경 글로우 */}
-      <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] bg-[#FFD700]/[0.03] rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-[10%] left-[10%] w-[350px] h-[350px] bg-[#7C3AED]/[0.04] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-[10%] right-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-[#87CEEB]/[0.08] dark:bg-[#FFD700]/[0.03] rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-[#B0E0FF]/[0.1] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[100px] pointer-events-none" />
+      {/* 구름 (라이트 전용) */}
+      <div className="dark:hidden absolute top-[6%] left-[20%] w-[160px] md:w-[250px] h-[50px] md:h-[70px] bg-white/35 rounded-full blur-[22px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         {/* 헤더 */}

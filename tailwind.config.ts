@@ -60,8 +60,8 @@ const config: Config = {
       /* 폰트 패밀리 (한국어 최적화 + Cinzel 디스플레이) */
       fontFamily: {
         sans: ['Pretendard', 'Noto Sans KR', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Cinzel', 'serif'],
-        'display-deco': ['Cinzel Decorative', 'serif'],
+        display: ['Nunito', 'Pretendard', 'sans-serif'],
+        'display-deco': ['Nunito', 'Pretendard', 'sans-serif'],
       },
       /* 박스 쉐도우 */
       boxShadow: {
