@@ -62,12 +62,16 @@ export default function ServicesSection() {
                 className="rounded-2xl p-5 sm:p-6 bg-white/80 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.06] transition-all duration-300 hover:border-[#7C3AED]/20 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)]"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div
-                    className="w-11 h-11 rounded-xl flex items-center justify-center"
-                    style={{ background: `${project.accentGradientCSS ? project.accentGradientCSS.includes('#10B981') ? '#10B981' : '#7C3AED' : '#7C3AED'}15`, color: project.accentGradientCSS?.includes('#10B981') ? '#10B981' : '#7C3AED' }}
-                  >
-                    <DynamicIcon name={project.icon} size={24} fallback={project.icon} />
-                  </div>
+                  {project.logoSrc ? (
+                    <img src={project.logoSrc} alt={project.name} className="h-10 w-10 dark:invert" />
+                  ) : (
+                    <div
+                      className="w-11 h-11 rounded-xl flex items-center justify-center"
+                      style={{ background: `${project.accentGradientCSS ? project.accentGradientCSS.includes('#10B981') ? '#10B981' : '#7C3AED' : '#7C3AED'}15`, color: project.accentGradientCSS?.includes('#10B981') ? '#10B981' : '#7C3AED' }}
+                    >
+                      <DynamicIcon name={project.icon} size={24} fallback={project.icon} />
+                    </div>
+                  )}
                   <div>
                     <h3><BrandText brand={project.id} size="text-lg" /></h3>
                     <p className="text-[11px] tracking-wide text-[#5C5C7A] dark:text-[#6A5490] uppercase">
