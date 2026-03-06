@@ -13,8 +13,8 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-slate-200 dark:border-white/10 mt-auto bg-white dark:bg-slate-900/50">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-8">
           {/* 회사 정보 */}
           <div>
             <h3 className="mb-3"><PompCoreLogo size="text-lg" /></h3>

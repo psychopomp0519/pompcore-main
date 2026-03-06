@@ -15,7 +15,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-sky-mist to-sky-faint dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
+    <section className="snap-section bg-gradient-to-b from-sky-mist to-sky-faint dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
       {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
       <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {/* 복합 구름 1 */}
@@ -45,7 +45,7 @@ export default function FaqSection() {
       <div className="max-w-[640px] mx-auto px-4 sm:px-6 relative z-10">
         {/* 헤더 */}
         <div className="text-center mb-12">
-          <h2 className="font-display text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
+          <h2 className="font-display text-xl sm:text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
             자주 묻는 <span className="text-gradient">질문</span>
           </h2>
           <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490]">

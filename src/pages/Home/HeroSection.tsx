@@ -45,7 +45,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-light via-sky-pale to-sky-faint dark:from-surface-dark-1 dark:via-surface-dark-1 dark:to-surface-dark-1"
+      className="snap-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-light via-sky-pale to-sky-faint dark:from-surface-dark-1 dark:via-surface-dark-1 dark:to-surface-dark-1"
       aria-label="히어로 영역"
     >
       {/* === 배경 글로우 오브 (다크: 별밤 글로우 / 라이트: 하늘빛 글로우) === */}
@@ -159,7 +159,7 @@ export default function HeroSection() {
       </div>
 
       {/* === 메인 콘텐츠 === */}
-      <div className="relative z-10 max-w-2xl mx-auto px-6 text-center flex flex-col items-center gap-6 py-32">
+      <div className="relative z-10 max-w-2xl mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-4 sm:gap-6 py-24 sm:py-32">
 
         {/* 엠블럼 */}
         <div
@@ -173,13 +173,13 @@ export default function HeroSection() {
 
         {/* 타이틀 */}
         <h1 className="font-display font-black leading-tight">
-          <span className="block text-[38px] md:text-[42px] bg-gradient-to-r from-[#9B59B6] via-[#D4A017] to-[#E0598B] bg-clip-text text-transparent dark:from-[#E0C0FF] dark:via-[#FFD700] dark:to-[#FF90D0]">
+          <span className="block text-[28px] sm:text-[34px] md:text-[42px] bg-gradient-to-r from-[#9B59B6] via-[#D4A017] to-[#E0598B] bg-clip-text text-transparent dark:from-[#E0C0FF] dark:via-[#FFD700] dark:to-[#FF90D0]">
             모험가여,
           </span>
-          <span className="block text-[38px] md:text-[42px] text-[#1A1A2E] dark:text-white mt-1">
+          <span className="block text-[28px] sm:text-[34px] md:text-[42px] text-[#1A1A2E] dark:text-white mt-1">
             당신의 이야기를
           </span>
-          <span className="block text-[32px] md:text-[36px] text-[#1A1A2E]/70 dark:text-white/55 mt-1">
+          <span className="block text-[24px] sm:text-[28px] md:text-[36px] text-[#1A1A2E]/70 dark:text-white/55 mt-1">
             여기서 시작하세요
           </span>
         </h1>

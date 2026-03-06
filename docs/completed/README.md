@@ -1,5 +1,22 @@
 # 개발 완료 목록
 
+## v0.4.8 (2026-03-06)
+
+- [x] 전체 페이지 컨테이너 패딩 반응형 (px-4 sm:px-6)
+- [x] 페이지 제목 크기 반응형 통일 (text-2xl sm:text-3xl md:text-4xl)
+- [x] Home 6개 섹션 패딩·gap·제목 반응형 조정
+- [x] Projects/About/PatchNotes/Announcements/Recruit 반응형 개선
+- [x] Footer 그리드 2열 모바일 레이아웃
+- [x] Header 컨테이너 반응형 패딩
+- [x] 카드·폼 패딩 단계별 반응형 (p-4 sm:p-6 md:p-8)
+
+## v0.4.7 (2026-03-06)
+
+- [x] ThemeToggle 애니메이티드 SVG 컴포넌트 (해↔달 모핑)
+- [x] 사이트 전체 테마 전환 애니메이션 (theme-transitioning 500ms)
+- [x] BrandText 로고 크기 조정
+- [x] ProjectCard 아이콘 크기 축소
+
 ## v0.4.6 (2026-03-06)
 
 - [x] 라이트 모드 배경 그라디언트 강화 (파스텔→푸른 하늘색 #B8DEFF~#E8F4FD)

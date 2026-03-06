@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function CtaBanner() {
   return (
-    <section className="bg-sky-faint dark:bg-surface-dark-3 relative overflow-hidden py-24">
+    <section className="snap-section bg-sky-faint dark:bg-surface-dark-3 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
       {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
       <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div className="animate-cloud-drift-slow" style={{ animationDelay: '4s' }}>
@@ -28,8 +28,8 @@ export default function CtaBanner() {
           <span key={i} className="absolute w-[2px] h-[2px] bg-white rounded-full animate-twinkle" style={{ top: `${10 + (i * 13) % 78}%`, left: `${8 + (i * 14.3) % 83}%`, animationDelay: `${(i * 0.4).toFixed(2)}s`, opacity: 0.2 + (i % 3) * 0.12 }} />
         ))}
       </div>
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
-        <div className="relative overflow-hidden rounded-[20px] p-6 sm:p-10 md:px-10 md:py-14 text-center">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+        <div className="relative overflow-hidden rounded-[20px] p-5 sm:p-10 md:px-10 md:py-14 text-center">
           {/* 배경 그라디언트 */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] to-[#A855F7] opacity-[0.92]" />
           {/* 골드 radial 오버레이 */}
@@ -50,7 +50,7 @@ export default function CtaBanner() {
 
           {/* 콘텐츠 */}
           <div className="relative z-10">
-            <h2 className="font-display text-[28px] font-bold text-white mb-4">
+            <h2 className="font-display text-xl sm:text-[28px] font-bold text-white mb-4">
               새로운 모험을 시작하세요
             </h2>
             <p className="text-white/80 max-w-lg mx-auto mb-8 text-sm leading-relaxed">
@@ -59,7 +59,7 @@ export default function CtaBanner() {
               모든 서비스를 무료로 체험할 수 있습니다.
             </p>
             <Link to="/auth/register">
-              <button className="inline-flex items-center justify-center px-8 py-3 text-base rounded-xl min-h-[48px] font-medium transition-all duration-300 bg-white/15 border border-white/25 text-white backdrop-blur-sm shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:bg-white/25 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] cursor-pointer">
+              <button className="inline-flex items-center justify-center px-6 sm:px-8 py-3 text-base rounded-xl min-h-[48px] font-medium transition-all duration-300 bg-white/15 border border-white/25 text-white backdrop-blur-sm shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:bg-white/25 hover:shadow-[0_0_30px_rgba(255,255,255,0.15)] cursor-pointer">
                 ✦ 무료로 시작하기
               </button>
             </Link>

@@ -26,13 +26,13 @@ const VALUES: { IconComponent: React.ComponentType<IconProps>; title: string; de
 
 export default function About() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
       {/* 페이지 헤더 */}
-      <div className="max-w-3xl mb-16">
-        <h1 className="text-4xl font-bold mb-4">
+      <div className="max-w-3xl mb-10 sm:mb-16">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           <span className="text-gradient">PompCore</span> 소개
         </h1>
-        <p className="text-lg text-slate-400 leading-relaxed">
+        <p className="text-base sm:text-lg text-slate-400 leading-relaxed">
           PompCore는 일상 속 다양한 작업들을 하나의 플랫폼에서 편안하게 관리할 수 있도록
           돕는 디지털 서비스 회사입니다. 가계부, 일정 관리, 교육 보조 등
           생활 밀착형 서비스를 개발하고 있습니다.
@@ -42,7 +42,7 @@ export default function About() {
       {/* 핵심 가치 */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold mb-8">핵심 가치</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
           {VALUES.map((value) => (
             <GlassCard key={value.title} padding="lg">
               <span className="text-[#7C3AED] dark:text-[#A78BFA] mb-4 block"><value.IconComponent size={32} /></span>

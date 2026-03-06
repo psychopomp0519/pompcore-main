@@ -46,7 +46,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services-section"
-      className="bg-gradient-to-b from-sky-faint to-sky-mist dark:from-surface-dark-2 dark:to-surface-dark-2 relative overflow-hidden py-24"
+      className="snap-section bg-gradient-to-b from-sky-faint to-sky-mist dark:from-surface-dark-2 dark:to-surface-dark-2 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center"
     >
       {/* 배경 글로우 */}
       <div className="absolute top-[10%] left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.1] dark:bg-[#10B981]/[0.05] rounded-full blur-[120px] pointer-events-none" />
@@ -86,10 +86,10 @@ export default function ServicesSection() {
         ))}
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         {/* 헤더 */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="font-display text-xl sm:text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
             우리의 <span className="text-gradient">프로젝트</span>
           </h2>
           <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490]">
@@ -115,7 +115,7 @@ export default function ServicesSection() {
                 {/* 상단 그라디언트 보더 */}
                 <div className="h-[2px]" style={{ background: colors.border }} />
 
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-6 p-6 md:p-8">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-6 p-4 sm:p-6 md:p-8">
                   {/* 좌측: 정보 (3/5) */}
                   <div className="md:col-span-3 space-y-4">
                     {/* 아이콘 + 이름 + 카테고리 */}
@@ -173,7 +173,7 @@ export default function ServicesSection() {
           })}
 
           {/* 예고 카드 */}
-          <div className="rounded-2xl p-8 flex items-center justify-center border-2 border-dashed border-slate-200 dark:border-white/[0.08] bg-transparent">
+          <div className="rounded-2xl p-4 sm:p-8 flex items-center justify-center border-2 border-dashed border-slate-200 dark:border-white/[0.08] bg-transparent">
             <div className="text-center">
               <span className="text-[#FFD700] mb-2 block"><SparkleIcon size={32} /></span>
               <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490]">

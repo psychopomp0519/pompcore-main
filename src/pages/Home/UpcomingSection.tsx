@@ -10,7 +10,7 @@ import BrandText from '../../components/common/BrandText';
 
 export default function UpcomingSection() {
   return (
-    <section className="bg-gradient-to-b from-sky-soft to-sky-mist dark:from-surface-dark-3 dark:to-surface-dark-3 relative overflow-hidden py-24">
+    <section className="snap-section bg-gradient-to-b from-sky-soft to-sky-mist dark:from-surface-dark-3 dark:to-surface-dark-3 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
       {/* 배경 글로우 */}
       <div className="absolute top-[10%] right-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-sky-deep/[0.1] dark:bg-[#FFD700]/[0.03] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-sky-mid/[0.12] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[100px] pointer-events-none" />
@@ -41,10 +41,10 @@ export default function UpcomingSection() {
         ))}
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
         {/* 헤더 */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="font-display text-xl sm:text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
             곧 만나볼 <span className="text-gradient">서비스</span>
           </h2>
           <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490]">
@@ -58,11 +58,11 @@ export default function UpcomingSection() {
             <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490]">준비 중인 서비스가 없습니다.</p>
           </div>
         ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-12">
           {UPCOMING_SERVICES.map((svc) => (
             <div
               key={svc.id}
-              className="rounded-2xl p-6 bg-white/80 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.06] text-center transition-all duration-300 hover:border-[#7C3AED]/20 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)]"
+              className="rounded-2xl p-4 sm:p-6 bg-white/80 dark:bg-white/[0.02] border border-slate-200 dark:border-white/[0.06] text-center transition-all duration-300 hover:border-[#7C3AED]/20 hover:shadow-[0_0_30px_rgba(124,58,237,0.06)]"
             >
               {/* 아이콘 */}
               <div
@@ -101,7 +101,7 @@ export default function UpcomingSection() {
         )}
 
         {/* 알림 신청 바 */}
-        <div className="rounded-2xl p-6 md:p-8 bg-[#FFD700]/[0.04] dark:bg-[#FFD700]/[0.04] border border-[#FFD700]/10 flex flex-col md:flex-row items-center gap-4 md:gap-6">
+        <div className="rounded-2xl p-4 sm:p-6 md:p-8 bg-[#FFD700]/[0.04] dark:bg-[#FFD700]/[0.04] border border-[#FFD700]/10 flex flex-col md:flex-row items-center gap-4 md:gap-6">
           <span className="text-[#FFD700]" aria-hidden="true"><BellIcon size={28} /></span>
           <div className="flex-1 text-center md:text-left">
             <p className="text-sm font-medium text-[#1A1A2E] dark:text-white/90 mb-1">

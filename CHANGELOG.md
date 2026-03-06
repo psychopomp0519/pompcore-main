@@ -2,6 +2,18 @@
 
 모든 버전별 상세 패치노트는 [docs/patchnotes/](docs/patchnotes/) 폴더를 참조하세요.
 
+## [0.4.8] - 2026-03-06
+
+반응형 UI 전면 개선
+
+- 전체 페이지 컨테이너 패딩 반응형 적용 (px-4 sm:px-6)
+- 페이지 제목 크기 반응형 통일 (text-2xl sm:text-3xl md:text-4xl)
+- Home 섹션 (Hero/Services/Why/Upcoming/FAQ/CTA) 패딩·gap·제목 반응형 조정
+- Projects/About/PatchNotes/Announcements/Recruit 페이지 반응형 개선
+- Footer 그리드 2열 모바일 레이아웃 적용
+- Header 컨테이너 패딩 반응형 적용
+- 카드·폼·정보 박스 패딩 단계별 반응형 (p-4 sm:p-6 md:p-8)
+
 ## [0.4.7] - 2026-03-06
 
 테마 토글 UI 개선
@@ -10,6 +22,7 @@
 - ThemeToggle 독립 컴포넌트 생성 (해↔달 모핑 전환, 광선/별 효과)
 - CSS transition 300ms 부드러운 전환, prefers-reduced-motion 대응
 - Header 데스크톱/모바일 양쪽 적용
+- 사이트 전체 테마 전환 애니메이션 (500ms smooth transition)
 
 ## [0.4.6] - 2026-03-06
 

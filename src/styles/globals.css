@@ -102,6 +102,146 @@
   background: linear-gradient(90deg, transparent 5%, rgba(124,58,237,0.25) 30%, rgba(255,215,0,0.15) 50%, rgba(124,58,237,0.25) 70%, transparent 95%);
 }
 
+/* ============================================================
+ * fullPage.js 스타일 풀스크린 스크롤
+ * ============================================================ */
+
+/* 래퍼: 뷰포트 전체를 차지 */
+.fullpage-wrapper {
+  position: relative;
+  height: calc(100vh - 5rem); /* 헤더(pt-20 = 5rem) 제외 */
+  overflow: hidden;
+}
+
+/* 스크롤 컨테이너: 스냅 스크롤 */
+.fullpage-container {
+  height: 100%;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 스크롤바 숨기기 */
+.fullpage-container::-webkit-scrollbar {
+  display: none;
+}
+.fullpage-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 각 섹션: 뷰포트 높이 + 스냅 */
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: calc(100vh - 5rem);
+}
+
+/* 우측 네비게이션 인디케이터 */
+.fullpage-nav {
+  position: fixed;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+}
+
+/* 모바일에서 네비게이션 숨기기 */
+@media (max-width: 767px) {
+  .fullpage-nav {
+    right: 0.5rem;
+    gap: 0.5rem;
+  }
+  .fullpage-dot-label {
+    display: none !important;
+  }
+}
+
+/* 개별 점 버튼 */
+.fullpage-dot {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* 점 인디케이터 */
+.fullpage-dot-inner {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(124, 58, 237, 0.2);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+.dark .fullpage-dot-inner {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 활성 점 */
+.fullpage-dot.active .fullpage-dot-inner {
+  background: #7C3AED;
+  box-shadow: 0 0 8px rgba(124, 58, 237, 0.4);
+  transform: scale(1.3);
+}
+.dark .fullpage-dot.active .fullpage-dot-inner {
+  background: #A78BFA;
+  box-shadow: 0 0 8px rgba(167, 139, 250, 0.4);
+}
+
+/* 호버 효과 */
+.fullpage-dot:hover .fullpage-dot-inner {
+  background: rgba(124, 58, 237, 0.4);
+  transform: scale(1.15);
+}
+.dark .fullpage-dot:hover .fullpage-dot-inner {
+  background: rgba(255, 255, 255, 0.4);
+}
+.fullpage-dot.active:hover .fullpage-dot-inner {
+  background: #7C3AED;
+  transform: scale(1.3);
+}
+.dark .fullpage-dot.active:hover .fullpage-dot-inner {
+  background: #A78BFA;
+}
+
+/* 라벨 (호버 시 표시) */
+.fullpage-dot-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(90, 80, 120, 0.6);
+  opacity: 0;
+  transform: translateX(4px);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  pointer-events: none;
+  order: -1;
+}
+.dark .fullpage-dot-label {
+  color: rgba(200, 190, 220, 0.5);
+}
+.fullpage-dot:hover .fullpage-dot-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+.fullpage-dot.active .fullpage-dot-label {
+  opacity: 1;
+  transform: translateX(0);
+  color: #7C3AED;
+}
+.dark .fullpage-dot.active .fullpage-dot-label {
+  color: #A78BFA;
+}
+
 /* 테마 전환 시 전체 요소 색상 애니메이션 */
 html.theme-transitioning,
 html.theme-transitioning *,

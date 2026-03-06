@@ -8,10 +8,10 @@ import ProjectCard from '../../components/project/ProjectCard';
 
 export default function Projects() {
   return (
-    <section className="max-w-7xl mx-auto px-6 py-16">
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16">
       {/* 페이지 헤더 */}
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold mb-4">
+      <div className="mb-8 sm:mb-12">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
           <span className="text-gradient">프로젝트</span>
         </h1>
         <p className="text-slate-400 max-w-2xl">
@@ -21,7 +21,7 @@ export default function Projects() {
       </div>
 
       {/* 프로젝트 그리드 */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {PROJECTS.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

@@ -15,7 +15,7 @@ function AnnouncementCard({ announcement }: { announcement: Announcement }) {
 
   return (
     <article
-      className="card p-6 rounded-2xl cursor-pointer transition-all duration-200"
+      className="card p-4 sm:p-6 rounded-2xl cursor-pointer transition-all duration-200"
       onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className="flex items-start gap-4">
@@ -86,10 +86,10 @@ export default function Announcements() {
   });
 
   return (
-    <section className="max-w-4xl mx-auto px-6 py-24">
+    <section className="max-w-4xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
       {/* 페이지 헤더 */}
-      <div className="text-center mb-16">
-        <h1 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
+      <div className="text-center mb-10 sm:mb-16">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-slate-900 dark:text-white">
           <span className="text-gradient">공지사항</span>
         </h1>
         <p className="text-slate-500 dark:text-slate-400 max-w-xl mx-auto">

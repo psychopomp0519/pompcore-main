@@ -54,10 +54,10 @@ export default function Recruit() {
 
   return (
     <section className="bg-surface-light dark:bg-surface-dark-1 min-h-screen">
-      <div className="max-w-5xl mx-auto px-6 py-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
         {/* 페이지 헤더 */}
-        <div className="text-center mb-16">
-          <h1 className="font-display text-[24px] md:text-[32px] font-bold text-[#1A1A2E] dark:text-white mb-4">
+        <div className="text-center mb-10 sm:mb-16">
+          <h1 className="font-display text-xl sm:text-[24px] md:text-[32px] font-bold text-[#1A1A2E] dark:text-white mb-4">
             함께할 <span className="text-gradient">모험가</span>를 찾습니다
           </h1>
           <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490] max-w-xl mx-auto leading-relaxed">
@@ -68,7 +68,7 @@ export default function Recruit() {
         </div>
 
         {/* AI 네이티브 개발 안내 */}
-        <div className="rounded-2xl p-6 md:p-8 bg-[#7C3AED]/[0.03] border border-[#7C3AED]/[0.08] mb-12">
+        <div className="rounded-2xl p-4 sm:p-6 md:p-8 bg-[#7C3AED]/[0.03] border border-[#7C3AED]/[0.08] mb-12">
           <h2 className="font-display text-lg font-bold text-[#1A1A2E] dark:text-white mb-3">
             AI 네이티브 개발이란?
           </h2>

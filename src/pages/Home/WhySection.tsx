@@ -36,7 +36,7 @@ const FEATURES: { IconComponent: React.ComponentType<IconProps>; title: string; 
 
 export default function WhySection() {
   return (
-    <section className="bg-gradient-to-b from-sky-mist to-sky-soft dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
+    <section className="snap-section bg-gradient-to-b from-sky-mist to-sky-soft dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
       {/* 배경 글로우 */}
       <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-sky-mid/[0.12] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[120px] pointer-events-none" />
       {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
@@ -66,10 +66,10 @@ export default function WhySection() {
         ))}
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {/* 헤더 */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
+        <div className="text-center mb-10 sm:mb-16">
+          <h2 className="font-display text-xl sm:text-[28px] font-bold text-[#1A1A2E] dark:text-white mb-3">
             왜 <span className="text-gradient">PompCore</span>인가요?
           </h2>
           <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490]">
@@ -78,12 +78,12 @@ export default function WhySection() {
         </div>
 
         {/* 4열 카드 그리드 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {FEATURES.map((feature) => (
             <div
               key={feature.title}
               className="
-                rounded-2xl p-8
+                rounded-2xl p-5 sm:p-8
                 bg-[#7C3AED]/[0.03] border border-[#7C3AED]/[0.08]
                 dark:bg-[#7C3AED]/[0.03] dark:border-[#7C3AED]/[0.08]
                 hover:border-[#7C3AED]/20 hover:shadow-[0_0_30px_rgba(124,58,237,0.08)] hover:bg-[#7C3AED]/[0.05]
