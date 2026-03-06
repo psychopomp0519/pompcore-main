@@ -131,11 +131,21 @@
   scrollbar-width: none;
 }
 
-/* 각 섹션: 뷰포트 높이 + 스냅 */
+/* 각 섹션: 뷰포트 높이 고정 + 스냅 (한 번 스크롤 = 한 섹션 이동) */
 .snap-section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  min-height: calc(100vh - 5rem);
+  height: calc(100vh - 5rem);
+  max-height: calc(100vh - 5rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.snap-section::-webkit-scrollbar {
+  display: none;
+}
+.snap-section {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* 우측 네비게이션 인디케이터 */

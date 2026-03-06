@@ -15,7 +15,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="snap-section bg-gradient-to-b from-sky-mist to-sky-faint dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
+    <section className="snap-section bg-gradient-to-b from-sky-mist to-sky-faint dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-12 flex flex-col justify-center">
       {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
       <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         {/* 복합 구름 1 */}

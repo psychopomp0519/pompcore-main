@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 export default function CtaBanner() {
   return (
-    <section className="snap-section bg-sky-faint dark:bg-surface-dark-3 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
+    <section className="snap-section bg-sky-faint dark:bg-surface-dark-3 relative overflow-hidden py-12 flex flex-col justify-center">
       {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
       <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
         <div className="animate-cloud-drift-slow" style={{ animationDelay: '4s' }}>

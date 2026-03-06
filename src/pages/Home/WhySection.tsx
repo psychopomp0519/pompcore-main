@@ -36,7 +36,7 @@ const FEATURES: { IconComponent: React.ComponentType<IconProps>; title: string; 
 
 export default function WhySection() {
   return (
-    <section className="snap-section bg-gradient-to-b from-sky-mist to-sky-soft dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
+    <section className="snap-section bg-gradient-to-b from-sky-mist to-sky-soft dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-12 flex flex-col justify-center">
       {/* 배경 글로우 */}
       <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-sky-mid/[0.12] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[120px] pointer-events-none" />
       {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}

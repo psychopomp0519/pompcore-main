@@ -16,29 +16,11 @@ export interface UpcomingService {
 
 export const UPCOMING_SERVICES: UpcomingService[] = [
   {
-    id: 'vault',
-    name: 'Vault',
-    icon: 'vault',
-    category: '스마트 가계부',
-    description: '수입과 지출을 한눈에 관리하고, 소비 습관을 분석해 드립니다',
-    status: 'coming_soon',
-    accentColor: '#10B981',
-  },
-  {
-    id: 'quest',
-    name: 'Quest',
-    icon: 'quest',
-    category: '일정 관리',
-    description: '할 일을 퀘스트처럼 관리하고, 완료할 때마다 성장하세요',
-    status: 'coming_soon',
-    accentColor: '#7C3AED',
-  },
-  {
     id: 'academy',
     name: 'Academy',
     icon: 'academy',
     category: '온라인 과외',
-    description: '소규모 1:1 과외를 편리하게 매칭하고 관리하세요',
+    description: '교사-학생 매칭, 수업 일정(Quest 연동), 수업료 관리(Vault 연동)를 하나의 생태계에서 제공합니다',
     status: 'preparing',
     accentColor: '#FBBF24',
   },

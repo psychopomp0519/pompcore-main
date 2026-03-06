@@ -45,7 +45,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="snap-section relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-light via-sky-pale to-sky-faint dark:from-surface-dark-1 dark:via-surface-dark-1 dark:to-surface-dark-1"
+      className="snap-section relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-light via-sky-pale to-sky-faint dark:from-surface-dark-1 dark:via-surface-dark-1 dark:to-surface-dark-1"
       aria-label="히어로 영역"
     >
       {/* === 배경 글로우 오브 (다크: 별밤 글로우 / 라이트: 하늘빛 글로우) === */}
@@ -190,9 +190,14 @@ export default function HeroSection() {
           aria-hidden="true"
         />
 
+        {/* 슬로건 */}
+        <p className="text-xs tracking-[3px] text-[#7C3AED]/60 dark:text-[#A78BFA]/50 uppercase font-medium">
+          일상을 플레이하다 — Play Your Day
+        </p>
+
         {/* 서브카피 */}
         <p className="text-sm text-[#5C5C7A] dark:text-[#6A5490] max-w-md leading-relaxed">
-          PompCore는 일상을 퀘스트로 바꾸는 플랫폼입니다.
+          서브컬쳐 게임의 감성으로 일상을 관리하세요.
           <br />
           가계부, 일정 관리, 그리고 더 많은 모험이 기다립니다.
         </p>

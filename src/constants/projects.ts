@@ -11,9 +11,9 @@ export const PROJECTS: Project[] = [
   {
     id: 'vault',
     name: 'Vault',
-    description: '스마트 가계부로 재정을 한눈에 관리하세요.',
+    description: '게임 감성으로 재정을 관리하고, 절약 목표를 달성하세요.',
     longDescription:
-      '수입과 지출을 자동으로 분류하고, 시각적 리포트로 재정 상태를 파악하세요. 예산 설정과 알림 기능으로 건강한 소비 습관을 만들어 갑니다.',
+      '수입과 지출을 게임 감성으로 기록하고 분석하는 스마트 가계부. 예산 설정과 초과 알림, 시각적 리포트로 재정 상태를 파악하고, 절약 목표 달성 시 경험치와 배지를 획득하세요.',
     icon: 'vault',
     status: 'coming_soon',
     category: 'finance',
@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     accentGradient: 'from-emerald-500 to-teal-500',
     accentGradientCSS: 'linear-gradient(90deg, #10B981, #06D6A0)',
     logoSrc: vaultLogo,
-    features: ['수입/지출 자동 분류', '월별 리포트', '예산 설정', '소비 패턴 분석'],
+    features: ['수입/지출 자동 분류', '월별 리포트 & 차트', '예산 설정 & 초과 알림', '절약 경험치 & 배지'],
     stats: [
       { label: '편의성', value: 85 },
       { label: '분석력', value: 92 },
@@ -33,9 +33,9 @@ export const PROJECTS: Project[] = [
   {
     id: 'quest',
     name: 'Quest',
-    description: '일정과 목표를 게임처럼 관리하세요.',
+    description: '할 일을 퀘스트처럼 클리어하고, 레벨업하세요.',
     longDescription:
-      '일정 관리를 퀘스트처럼 재미있게. 할 일을 완료하면 경험치를 얻고, 습관을 레벨업하세요. 캘린더, 리마인더, 통계를 한 곳에서 관리합니다.',
+      '할 일과 일정을 RPG 퀘스트처럼 관리하는 서비스. 일정 완료 시 경험치를 획득하고 레벨업하세요. 캘린더, 루틴 트래커(데일리 퀘스트), 리마인더를 한 곳에서 관리합니다.',
     icon: 'quest',
     status: 'coming_soon',
     category: 'productivity',
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
     accentGradient: 'from-blue-500 to-cyan-500',
     accentGradientCSS: 'linear-gradient(90deg, #7C3AED, #A855F7)',
     logoSrc: questLogo,
-    features: ['경험치 & 레벨업', '캘린더 통합', '습관 트래커', '달성률 통계'],
+    features: ['경험치 & 레벨업', '캘린더 통합', '루틴 트래커 (데일리 퀘스트)', '리마인더 & 알림'],
     stats: [
       { label: '몰입도', value: 90 },
       { label: '성장', value: 88 },

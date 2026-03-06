@@ -10,7 +10,7 @@ import BrandText from '../../components/common/BrandText';
 
 export default function UpcomingSection() {
   return (
-    <section className="snap-section bg-gradient-to-b from-sky-soft to-sky-mist dark:from-surface-dark-3 dark:to-surface-dark-3 relative overflow-hidden py-24 min-h-screen flex flex-col justify-center">
+    <section className="snap-section bg-gradient-to-b from-sky-soft to-sky-mist dark:from-surface-dark-3 dark:to-surface-dark-3 relative overflow-hidden py-12 flex flex-col justify-center">
       {/* 배경 글로우 */}
       <div className="absolute top-[10%] right-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-sky-deep/[0.1] dark:bg-[#FFD700]/[0.03] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[10%] w-[250px] md:w-[300px] lg:w-[350px] h-[250px] md:h-[300px] lg:h-[350px] bg-sky-mid/[0.12] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[100px] pointer-events-none" />
