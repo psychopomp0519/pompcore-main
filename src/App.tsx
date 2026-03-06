@@ -15,13 +15,13 @@ export default function App() {
   const initialize = useAuthStore((s) => s.initialize);
   const setUser = useAuthStore((s) => s.setUser);
 
-  /** 앱 마운트 시 인증 상태 초기화 + 리스너 등록 */
+  /** 앱 마운트 시 리스너 먼저 등록 → 세션 초기화 (OAuth 해시 감지 순서 보장) */
   useEffect(() => {
-    initialize();
-
     const { data: { subscription } } = onAuthStateChange((user) => {
       setUser(user);
     });
+
+    initialize();
 
     return () => subscription.unsubscribe();
   }, [initialize, setUser]);

@@ -6,6 +6,7 @@
  */
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAuthStore } from '../../store/authStore';
 import Button from '../common/Button';
 import ThemeToggle from '../common/ThemeToggle';
 import pompcoreLogo from '../../assets/logos/pompcorelogo.svg';
@@ -25,6 +26,9 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const user = useAuthStore((s) => s.user);
+  const isAuthLoading = useAuthStore((s) => s.isLoading);
+  const logout = useAuthStore((s) => s.logout);
 
   /** 스크롤 감지하여 헤더 배경 변경 */
   useEffect(() => {
@@ -79,12 +83,23 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
 
-          <Link to="/auth/login">
-            <Button variant="ghost" size="sm">로그인</Button>
-          </Link>
-          <Link to="/auth/register">
-            <Button variant="primary" size="sm">시작하기</Button>
-          </Link>
+          {isAuthLoading ? null : user ? (
+            <>
+              <span className="text-sm text-slate-600 dark:text-slate-300 truncate max-w-[120px]">
+                {user.displayName ?? user.email}
+              </span>
+              <Button variant="ghost" size="sm" onClick={logout}>로그아웃</Button>
+            </>
+          ) : (
+            <>
+              <Link to="/auth/login">
+                <Button variant="ghost" size="sm">로그인</Button>
+              </Link>
+              <Link to="/auth/register">
+                <Button variant="primary" size="sm">시작하기</Button>
+              </Link>
+            </>
+          )}
         </div>
 
         {/* 모바일: 테마 토글 + 햄버거 */}
@@ -119,12 +134,23 @@ export default function Header() {
               </Link>
             ))}
             <hr className="border-slate-200 dark:border-white/10 my-2" />
-            <Link to="/auth/login">
-              <Button variant="ghost" size="sm" className="w-full">로그인</Button>
-            </Link>
-            <Link to="/auth/register">
-              <Button variant="primary" size="sm" className="w-full">시작하기</Button>
-            </Link>
+            {isAuthLoading ? null : user ? (
+              <>
+                <span className="text-sm text-slate-600 dark:text-slate-300 px-2 py-2 truncate">
+                  {user.displayName ?? user.email}
+                </span>
+                <Button variant="ghost" size="sm" className="w-full" onClick={logout}>로그아웃</Button>
+              </>
+            ) : (
+              <>
+                <Link to="/auth/login">
+                  <Button variant="ghost" size="sm" className="w-full">로그인</Button>
+                </Link>
+                <Link to="/auth/register">
+                  <Button variant="primary" size="sm" className="w-full">시작하기</Button>
+                </Link>
+              </>
+            )}
           </nav>
         </div>
       )}

@@ -20,8 +20,13 @@ function toUserProfile(user: { id: string; email?: string; user_metadata?: Recor
   return {
     id: user.id,
     email: user.email ?? '',
-    displayName: typeof meta.display_name === 'string' ? meta.display_name : null,
-    avatarUrl: typeof meta.avatar_url === 'string' ? meta.avatar_url : null,
+    displayName:
+      (typeof meta.display_name === 'string' ? meta.display_name : null)
+      ?? (typeof meta.full_name === 'string' ? meta.full_name : null)
+      ?? (typeof meta.name === 'string' ? meta.name : null),
+    avatarUrl:
+      (typeof meta.avatar_url === 'string' ? meta.avatar_url : null)
+      ?? (typeof meta.picture === 'string' ? meta.picture : null),
     createdAt: user.created_at ?? new Date().toISOString(),
     role: isValidRole(meta.role) ? meta.role : 'user',
   };
@@ -70,14 +75,20 @@ export async function logout(): Promise<void> {
   if (error) throw new Error(error.message);
 }
 
-/** 현재 세션의 사용자 정보 조회 */
+/** 현재 세션의 사용자 정보 조회 (URL 해시의 OAuth 토큰도 자동 감지) */
 export async function getCurrentUser(): Promise<UserProfile | null> {
   if (!isSupabaseConfigured) return null;
 
-  const { data: { user }, error } = await supabase.auth.getUser();
+  const { data: { session }, error } = await supabase.auth.getSession();
 
-  if (error || !user) return null;
-  return toUserProfile(user);
+  if (error || !session?.user) return null;
+
+  /* OAuth 리다이렉트 후 URL 해시에 남은 토큰 정리 */
+  if (window.location.hash.includes('access_token')) {
+    window.history.replaceState(null, '', window.location.pathname);
+  }
+
+  return toUserProfile(session.user);
 }
 
 /** 인증 상태 변경 리스너 (앱 초기화 시 사용) */
