@@ -7,7 +7,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Button from '../common/Button';
-import { useThemeStore } from '../../store/themeStore';
+import ThemeToggle from '../common/ThemeToggle';
 import pompcoreLogo from '../../assets/logos/pompcorelogo.svg';
 import { PompCoreLogo } from '../common/BrandText';
 
@@ -25,7 +25,6 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { theme, toggleTheme } = useThemeStore();
 
   /** 스크롤 감지하여 헤더 배경 변경 */
   useEffect(() => {
@@ -52,7 +51,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* 로고 */}
         <Link to="/" className="flex items-center gap-2 group">
-          <img src={pompcoreLogo} alt="PompCore" className="h-8 w-8 mix-blend-multiply dark:mix-blend-normal dark:invert" />
+          <img src={pompcoreLogo} alt="PompCore" className="h-6 w-6 dark:invert" />
           <PompCoreLogo />
         </Link>
 
@@ -78,14 +77,7 @@ export default function Header() {
 
         {/* 우측 버튼들 */}
         <div className="hidden md:flex items-center gap-3">
-          {/* 다크 모드 토글 */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-white/10 transition-colors"
-            aria-label="테마 변경"
-          >
-            {theme === 'light' ? '🌙' : '☀️'}
-          </button>
+          <ThemeToggle />
 
           <Link to="/auth/login">
             <Button variant="ghost" size="sm">로그인</Button>
@@ -97,13 +89,7 @@ export default function Header() {
 
         {/* 모바일: 테마 토글 + 햄버거 */}
         <div className="flex md:hidden items-center gap-2">
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg text-slate-500 dark:text-slate-400"
-            aria-label="테마 변경"
-          >
-            {theme === 'light' ? '🌙' : '☀️'}
-          </button>
+          <ThemeToggle />
           <button
             className="p-2 text-slate-700 dark:text-white"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

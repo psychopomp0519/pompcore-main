@@ -36,12 +36,29 @@ const FEATURES: { IconComponent: React.ComponentType<IconProps>; title: string; 
 
 export default function WhySection() {
   return (
-    <section className="bg-gradient-to-b from-[#FAF8FF] to-[#EEF5FD] dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
+    <section className="bg-gradient-to-b from-sky-mist to-sky-soft dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
       {/* 배경 글로우 */}
-      <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.1] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[120px] pointer-events-none" />
-      {/* 구름 (라이트 전용) */}
-      <div className="dark:hidden absolute top-[12%] right-[8%] w-[170px] md:w-[280px] h-[50px] md:h-[75px] bg-white/55 rounded-full blur-[18px] pointer-events-none" />
-      <div className="dark:hidden absolute bottom-[15%] left-[20%] w-[140px] md:w-[230px] h-[45px] md:h-[65px] bg-white/50 rounded-full blur-[16px] pointer-events-none" />
+      <div className="absolute top-1/2 -translate-y-1/2 left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-sky-mid/[0.12] dark:bg-[#7C3AED]/[0.04] rounded-full blur-[120px] pointer-events-none" />
+      {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
+      <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        {/* 복합 구름 1 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '4s' }}>
+          <div className="absolute top-[10%] right-[6%] w-[190px] md:w-[320px] h-[55px] md:h-[80px] bg-white/40 rounded-full blur-[25px]" />
+          <div className="absolute top-[10.5%] right-[8%] w-[130px] md:w-[230px] h-[38px] md:h-[58px] bg-white/76 rounded-full blur-[11px]" />
+        </div>
+        {/* 복합 구름 2 */}
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '11s' }}>
+          <div className="absolute bottom-[12%] left-[18%] w-[170px] md:w-[280px] h-[50px] md:h-[72px] bg-white/38 rounded-full blur-[24px]" />
+          <div className="absolute bottom-[12.5%] left-[20%] w-[120px] md:w-[200px] h-[35px] md:h-[52px] bg-white/74 rounded-full blur-[10px]" />
+        </div>
+        {/* 작은 구름 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '7s' }}>
+          <div className="absolute top-[35%] left-[5%] w-[100px] md:w-[160px] h-[32px] md:h-[46px] bg-white/80 rounded-full blur-[8px]" />
+        </div>
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '16s' }}>
+          <div className="absolute bottom-[30%] right-[20%] w-[85px] md:w-[140px] h-[28px] md:h-[42px] bg-white/78 rounded-full blur-[7px]" />
+        </div>
+      </div>
       {/* 별 (다크 전용) */}
       <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
         {Array.from({ length: 10 }).map((_, i) => (

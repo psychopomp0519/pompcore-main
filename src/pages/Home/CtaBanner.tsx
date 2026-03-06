@@ -7,9 +7,21 @@ import { Link } from 'react-router-dom';
 
 export default function CtaBanner() {
   return (
-    <section className="bg-surface-light dark:bg-surface-dark-3 relative overflow-hidden py-24">
-      {/* 구름 (라이트 전용) */}
-      <div className="dark:hidden absolute top-[15%] left-[10%] w-[150px] md:w-[240px] h-[48px] md:h-[68px] bg-white/40 rounded-full blur-[18px] pointer-events-none" />
+    <section className="bg-sky-faint dark:bg-surface-dark-3 relative overflow-hidden py-24">
+      {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
+      <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '4s' }}>
+          <div className="absolute top-[12%] left-[8%] w-[170px] md:w-[280px] h-[50px] md:h-[72px] bg-white/38 rounded-full blur-[24px]" />
+          <div className="absolute top-[12.5%] left-[10%] w-[110px] md:w-[190px] h-[35px] md:h-[50px] bg-white/74 rounded-full blur-[10px]" />
+        </div>
+        <div className="animate-cloud-drift" style={{ animationDelay: '10s' }}>
+          <div className="absolute bottom-[15%] right-[12%] w-[140px] md:w-[230px] h-[42px] md:h-[62px] bg-white/36 rounded-full blur-[22px]" />
+          <div className="absolute bottom-[15.5%] right-[14%] w-[95px] md:w-[160px] h-[30px] md:h-[44px] bg-white/72 rounded-full blur-[9px]" />
+        </div>
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '15s' }}>
+          <div className="absolute top-[45%] right-[30%] w-[80px] md:w-[130px] h-[26px] md:h-[38px] bg-white/76 rounded-full blur-[7px]" />
+        </div>
+      </div>
       {/* 별 (다크 전용) */}
       <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
         {Array.from({ length: 6 }).map((_, i) => (

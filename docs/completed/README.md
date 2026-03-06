@@ -1,5 +1,16 @@
 # 개발 완료 목록
 
+## v0.4.6 (2026-03-06)
+
+- [x] 라이트 모드 배경 그라디언트 강화 (파스텔→푸른 하늘색 #B8DEFF~#E8F4FD)
+- [x] 복합 구름 시스템 (가장자리+코어 2레이어 입체 구름) 전 섹션 적용
+- [x] 구름 드리프트 애니메이션 (cloud-drift 20s, cloud-drift-slow 30s)
+- [x] 섹션 간 하늘 연속성 확보 (그라디언트 끝/시작 색상 일치)
+- [x] sky 디자인 토큰 7단계 팔레트 (tailwind.config.ts)
+- [x] cloudDrift/cloudDriftSlow keyframes 추가
+- [x] 로고/아이콘 6종 PNG 배경 투명화 (near-white 픽셀 알파 제거)
+- [x] mix-blend-multiply CSS 해킹 제거 → 투명 배경 로고로 전환
+
 ## v0.4.3 (2026-03-05)
 
 - [x] #1 hasPermission() null/undefined 방어 처리

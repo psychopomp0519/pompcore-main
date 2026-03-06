@@ -102,6 +102,16 @@
   background: linear-gradient(90deg, transparent 5%, rgba(124,58,237,0.25) 30%, rgba(255,215,0,0.15) 50%, rgba(124,58,237,0.25) 70%, transparent 95%);
 }
 
+/* 테마 전환 시 전체 요소 색상 애니메이션 */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: background-color 500ms ease, color 500ms ease,
+              border-color 500ms ease, box-shadow 500ms ease,
+              fill 500ms ease, stroke 500ms ease !important;
+}
+
 /* 모션 감소 선호 사용자 대응 (Apple HIG 필수 요구사항) */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

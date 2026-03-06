@@ -2,6 +2,29 @@
 
 모든 버전별 상세 패치노트는 [docs/patchnotes/](docs/patchnotes/) 폴더를 참조하세요.
 
+## [0.4.7] - 2026-03-06
+
+테마 토글 UI 개선
+
+- 이모지(🌙/☀️) → 애니메이티드 SVG 아이콘으로 교체
+- ThemeToggle 독립 컴포넌트 생성 (해↔달 모핑 전환, 광선/별 효과)
+- CSS transition 300ms 부드러운 전환, prefers-reduced-motion 대응
+- Header 데스크톱/모바일 양쪽 적용
+
+## [0.4.6] - 2026-03-06
+
+라이트 모드 하늘+구름 시각 효과 대규모 개선
+
+- 배경 그라디언트 강화: 파스텔 → 푸른 하늘색 (#B8DEFF~#E8F4FD) 팔레트 적용
+- 복합 구름 시스템: 가장자리(연한 blur) + 코어(진한 blur) 2레이어 구성으로 입체감
+- 구름 드리프트 애니메이션: cloud-drift(20s), cloud-drift-slow(30s) keyframes 추가
+- 섹션 간 하늘 연속성: 그라디언트 끝/시작 색상 일치로 자연스러운 전환
+- sky 디자인 토큰 추가: tailwind.config.ts에 sky.deep~faint 7단계 팔레트
+- 모든 섹션 구름 4~8개로 보강 (기존 1~3개 → 복합 구름 포함)
+- prefers-reduced-motion 기존 글로벌 대응으로 애니메이션 자동 비활성화
+- 로고/아이콘 6종 PNG 배경 투명화 처리 (sharp로 near-white 픽셀 제거)
+- mix-blend-multiply 해킹 제거 → 투명 배경 로고로 모든 배경색에서 깔끔히 표시
+
 ## [0.4.3] - 2026-03-05
 
 프로젝트 검증 기반 품질 개선 (11건)

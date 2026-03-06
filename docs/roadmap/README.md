@@ -8,6 +8,8 @@
 - [ ] SEO 기본 설정 (메타 태그, sitemap.xml, robots.txt, OG 이미지)
 - [ ] Microsoft Clarity 연동 (사용자 행동 분석)
 
+- [x] ~~라이트 모드 하늘+구름 시각 효과 개선~~ → v0.4.6 완료
+
 ## 우선순위: Mid
 
 - [ ] AdSense 신청 및 연동 (광고 수익화)

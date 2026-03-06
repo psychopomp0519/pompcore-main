@@ -46,15 +46,36 @@ export default function ServicesSection() {
   return (
     <section
       id="services-section"
-      className="bg-gradient-to-b from-[#F0F7FF] to-[#FAF8FF] dark:from-surface-dark-2 dark:to-surface-dark-2 relative overflow-hidden py-24"
+      className="bg-gradient-to-b from-sky-faint to-sky-mist dark:from-surface-dark-2 dark:to-surface-dark-2 relative overflow-hidden py-24"
     >
       {/* 배경 글로우 */}
       <div className="absolute top-[10%] left-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.1] dark:bg-[#10B981]/[0.05] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[5%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#87CEEB]/[0.08] dark:bg-[#7C3AED]/[0.06] rounded-full blur-[120px] pointer-events-none" />
-      {/* 구름 (라이트 전용) */}
-      <div className="dark:hidden absolute top-[5%] right-[15%] w-[180px] md:w-[300px] h-[55px] md:h-[80px] bg-white/55 rounded-full blur-[20px] pointer-events-none" />
-      <div className="dark:hidden absolute bottom-[8%] left-[10%] w-[200px] md:w-[320px] h-[60px] md:h-[85px] bg-white/50 rounded-full blur-[22px] pointer-events-none" />
-      <div className="dark:hidden absolute top-[15%] left-[30%] w-[120px] md:w-[200px] h-[40px] md:h-[55px] bg-white/60 rounded-full blur-[14px] pointer-events-none" />
+      {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
+      <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        {/* 복합 구름 1 */}
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '2s' }}>
+          <div className="absolute top-[5%] right-[12%] w-[200px] md:w-[340px] h-[55px] md:h-[85px] bg-white/42 rounded-full blur-[26px]" />
+          <div className="absolute top-[5.5%] right-[14%] w-[140px] md:w-[240px] h-[40px] md:h-[60px] bg-white/78 rounded-full blur-[12px]" />
+        </div>
+        {/* 복합 구름 2 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '8s' }}>
+          <div className="absolute bottom-[8%] left-[8%] w-[220px] md:w-[360px] h-[60px] md:h-[90px] bg-white/40 rounded-full blur-[28px]" />
+          <div className="absolute bottom-[8.5%] left-[10%] w-[150px] md:w-[260px] h-[42px] md:h-[62px] bg-white/76 rounded-full blur-[12px]" />
+        </div>
+        {/* 복합 구름 3 */}
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '14s' }}>
+          <div className="absolute top-[15%] left-[28%] w-[150px] md:w-[250px] h-[45px] md:h-[65px] bg-white/38 rounded-full blur-[22px]" />
+          <div className="absolute top-[15.5%] left-[30%] w-[100px] md:w-[170px] h-[32px] md:h-[45px] bg-white/75 rounded-full blur-[10px]" />
+        </div>
+        {/* 작은 구름 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '5s' }}>
+          <div className="absolute top-[40%] right-[25%] w-[90px] md:w-[150px] h-[30px] md:h-[45px] bg-white/80 rounded-full blur-[8px]" />
+        </div>
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '10s' }}>
+          <div className="absolute bottom-[25%] left-[45%] w-[80px] md:w-[130px] h-[28px] md:h-[40px] bg-white/78 rounded-full blur-[7px]" />
+        </div>
+      </div>
       {/* 별 (다크 전용) */}
       <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
         {Array.from({ length: 15 }).map((_, i) => (

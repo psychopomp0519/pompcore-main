@@ -41,25 +41,25 @@ const BRAND_CONFIG: Record<string, { logo?: string; label: string; textStyle: st
 
 /** size 클래스 → 로고 높이(px) 매핑 */
 const SIZE_TO_HEIGHT: Record<string, number> = {
-  'text-xs': 14,
-  'text-sm': 18,
-  'text-base': 22,
-  'text-lg': 26,
-  'text-xl': 30,
-  'text-2xl': 36,
-  'text-3xl': 42,
+  'text-xs': 8,
+  'text-sm': 11,
+  'text-base': 14,
+  'text-lg': 16,
+  'text-xl': 19,
+  'text-2xl': 24,
+  'text-3xl': 30,
 };
 
 export default function BrandText({ brand, size = 'text-lg', className = '' }: BrandTextProps) {
   const config = BRAND_CONFIG[brand] ?? BRAND_CONFIG.pompcore;
-  const height = SIZE_TO_HEIGHT[size] ?? 26;
+  const height = SIZE_TO_HEIGHT[size] ?? 22;
 
   if (config.logo) {
     return (
       <img
         src={config.logo}
         alt={config.label}
-        className={`inline-block mix-blend-multiply dark:mix-blend-normal dark:invert ${className}`}
+        className={`inline-block dark:invert ${className}`}
         style={{ height: `${height}px`, width: 'auto' }}
       />
     );
@@ -84,7 +84,7 @@ export function PompCoreLogo({ size = 'text-xl', className = '' }: { size?: stri
     <img
       src={pompcoreLogo}
       alt="POMPCORE"
-      className={`inline-block mix-blend-multiply dark:mix-blend-normal dark:invert ${className}`}
+      className={`inline-block dark:invert ${className}`}
       style={{ height: `${height}px`, width: 'auto' }}
     />
   );

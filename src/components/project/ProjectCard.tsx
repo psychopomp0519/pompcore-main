@@ -49,7 +49,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       {/* 상태 배지 + 아이콘 */}
       <div className="flex items-center justify-between mb-4">
         {logoSrc ? (
-          <img src={logoSrc} alt={name} className="h-10 w-10 mix-blend-multiply dark:mix-blend-normal dark:invert" />
+          <img src={logoSrc} alt={name} className="h-6 w-6 dark:invert" />
         ) : (
           <span className={accentColor}><DynamicIcon name={icon} size={40} fallback={icon} /></span>
         )}

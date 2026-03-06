@@ -15,10 +15,27 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="bg-gradient-to-b from-[#F0F7FF] to-[#FAF8FF] dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
-      {/* 구름 (라이트 전용) */}
-      <div className="dark:hidden absolute top-[10%] right-[12%] w-[160px] md:w-[260px] h-[50px] md:h-[72px] bg-white/50 rounded-full blur-[18px] pointer-events-none" />
-      <div className="dark:hidden absolute bottom-[15%] left-[8%] w-[130px] md:w-[220px] h-[42px] md:h-[60px] bg-white/45 rounded-full blur-[16px] pointer-events-none" />
+    <section className="bg-gradient-to-b from-sky-mist to-sky-faint dark:from-surface-dark-1 dark:to-surface-dark-1 relative overflow-hidden py-24">
+      {/* 구름 (라이트 전용) — 복합 구름 + 애니메이션 */}
+      <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
+        {/* 복합 구름 1 */}
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '5s' }}>
+          <div className="absolute top-[8%] right-[10%] w-[180px] md:w-[300px] h-[52px] md:h-[76px] bg-white/40 rounded-full blur-[24px]" />
+          <div className="absolute top-[8.5%] right-[12%] w-[120px] md:w-[210px] h-[36px] md:h-[54px] bg-white/76 rounded-full blur-[10px]" />
+        </div>
+        {/* 복합 구름 2 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '12s' }}>
+          <div className="absolute bottom-[12%] left-[6%] w-[160px] md:w-[270px] h-[48px] md:h-[68px] bg-white/38 rounded-full blur-[22px]" />
+          <div className="absolute bottom-[12.5%] left-[8%] w-[110px] md:w-[190px] h-[34px] md:h-[48px] bg-white/74 rounded-full blur-[9px]" />
+        </div>
+        {/* 작은 구름 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '8s' }}>
+          <div className="absolute top-[40%] left-[15%] w-[85px] md:w-[140px] h-[28px] md:h-[42px] bg-white/78 rounded-full blur-[7px]" />
+        </div>
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '17s' }}>
+          <div className="absolute bottom-[35%] right-[18%] w-[80px] md:w-[130px] h-[26px] md:h-[38px] bg-white/76 rounded-full blur-[7px]" />
+        </div>
+      </div>
       {/* 별 (다크 전용) */}
       <div className="hidden dark:block absolute inset-0 pointer-events-none" aria-hidden="true">
         {Array.from({ length: 8 }).map((_, i) => (

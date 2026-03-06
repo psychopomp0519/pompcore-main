@@ -45,6 +45,16 @@ const config: Config = {
           light: '#3d4a5c',
           dark: '#1a2332',
         },
+        /* 하늘 색상 팔레트 (라이트 모드 배경용) */
+        sky: {
+          deep: '#87CEEB',
+          mid: '#A8D5FF',
+          light: '#B8DEFF',
+          pale: '#D0EAFF',
+          faint: '#E8F4FD',
+          mist: '#E0F0FF',
+          soft: '#D6EDFF',
+        },
         surface: {
           DEFAULT: '#FAF8FF',
           dark: '#0f172a',
@@ -83,6 +93,8 @@ const config: Config = {
         'float': 'float 6s ease-in-out infinite',
         'twinkle': 'twinkle 4s ease-in-out infinite',
         'scroll-pulse': 'scrollPulse 2s ease-in-out infinite',
+        'cloud-drift': 'cloudDrift 20s ease-in-out infinite',
+        'cloud-drift-slow': 'cloudDriftSlow 30s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -104,6 +116,16 @@ const config: Config = {
         scrollPulse: {
           '0%, 100%': { opacity: '0.4', transform: 'translateY(0)' },
           '50%': { opacity: '1', transform: 'translateY(6px)' },
+        },
+        cloudDrift: {
+          '0%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(30px)' },
+          '100%': { transform: 'translateX(0)' },
+        },
+        cloudDriftSlow: {
+          '0%': { transform: 'translateX(0)' },
+          '50%': { transform: 'translateX(15px)' },
+          '100%': { transform: 'translateX(0)' },
         },
       },
     },

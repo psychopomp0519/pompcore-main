@@ -45,7 +45,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#E8F4FD] via-[#F0F7FF] to-[#FAF8FF] dark:from-surface-dark-1 dark:via-surface-dark-1 dark:to-surface-dark-1"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-sky-light via-sky-pale to-sky-faint dark:from-surface-dark-1 dark:via-surface-dark-1 dark:to-surface-dark-1"
       aria-label="히어로 영역"
     >
       {/* === 배경 글로우 오브 (다크: 별밤 글로우 / 라이트: 하늘빛 글로우) === */}
@@ -53,21 +53,43 @@ export default function HeroSection() {
       <div className="absolute bottom-[15%] right-[10%] w-[250px] md:w-[350px] lg:w-[400px] h-[250px] md:h-[350px] lg:h-[400px] bg-[#B0E0FF]/[0.08] dark:bg-[#FFD700]/[0.025] rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[20%] left-[5%] w-[200px] md:w-[300px] lg:w-[350px] h-[200px] md:h-[300px] lg:h-[350px] bg-[#E0F0FF]/[0.15] dark:bg-[#EC4899]/[0.03] rounded-full blur-[100px] pointer-events-none" />
 
-      {/* === 구름 장식 (라이트 모드 전용) — 여러 레이어로 입체감 === */}
+      {/* === 구름 장식 (라이트 모드 전용) — 복합 구름(코어+가장자리) + 애니메이션 === */}
       <div className="dark:hidden absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
-        {/* 큰 구름 레이어 (뒤쪽, 연하게) */}
-        <div className="absolute top-[6%] left-[10%] w-[200px] md:w-[360px] h-[60px] md:h-[90px] bg-white/50 rounded-full blur-[30px]" />
-        <div className="absolute top-[12%] right-[8%] w-[220px] md:w-[380px] h-[65px] md:h-[100px] bg-white/45 rounded-full blur-[35px]" />
-        <div className="absolute bottom-[18%] left-[15%] w-[240px] md:w-[400px] h-[70px] md:h-[100px] bg-white/40 rounded-full blur-[32px]" />
-        {/* 중간 구름 레이어 */}
-        <div className="absolute top-[9%] left-[20%] w-[140px] md:w-[250px] h-[45px] md:h-[65px] bg-white/60 rounded-full blur-[18px]" />
-        <div className="absolute top-[18%] right-[18%] w-[160px] md:w-[280px] h-[50px] md:h-[75px] bg-white/55 rounded-full blur-[20px]" />
-        <div className="absolute top-[30%] left-[35%] w-[130px] md:w-[220px] h-[40px] md:h-[60px] bg-white/50 rounded-full blur-[16px]" />
-        <div className="absolute bottom-[25%] right-[12%] w-[150px] md:w-[260px] h-[50px] md:h-[70px] bg-white/55 rounded-full blur-[18px]" />
+        {/* 복합 구름 1 — 좌상단 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '0s' }}>
+          <div className="absolute top-[6%] left-[8%] w-[220px] md:w-[380px] h-[60px] md:h-[90px] bg-white/45 rounded-full blur-[28px]" />
+          <div className="absolute top-[6.5%] left-[10%] w-[160px] md:w-[280px] h-[45px] md:h-[65px] bg-white/80 rounded-full blur-[12px]" />
+        </div>
+        {/* 복합 구름 2 — 우상단 */}
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '3s' }}>
+          <div className="absolute top-[11%] right-[6%] w-[240px] md:w-[400px] h-[65px] md:h-[100px] bg-white/40 rounded-full blur-[30px]" />
+          <div className="absolute top-[11.5%] right-[8%] w-[170px] md:w-[300px] h-[48px] md:h-[72px] bg-white/78 rounded-full blur-[14px]" />
+        </div>
+        {/* 복합 구름 3 — 중앙 좌측 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '7s' }}>
+          <div className="absolute top-[28%] left-[18%] w-[180px] md:w-[300px] h-[50px] md:h-[75px] bg-white/40 rounded-full blur-[25px]" />
+          <div className="absolute top-[28.5%] left-[20%] w-[130px] md:w-[220px] h-[38px] md:h-[55px] bg-white/75 rounded-full blur-[10px]" />
+        </div>
+        {/* 복합 구름 4 — 우측 중단 */}
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '12s' }}>
+          <div className="absolute top-[20%] right-[15%] w-[160px] md:w-[270px] h-[50px] md:h-[70px] bg-white/38 rounded-full blur-[24px]" />
+          <div className="absolute top-[20.5%] right-[17%] w-[110px] md:w-[190px] h-[36px] md:h-[50px] bg-white/72 rounded-full blur-[10px]" />
+        </div>
+        {/* 복합 구름 5 — 하단 좌측 */}
+        <div className="animate-cloud-drift" style={{ animationDelay: '5s' }}>
+          <div className="absolute bottom-[20%] left-[12%] w-[200px] md:w-[350px] h-[55px] md:h-[85px] bg-white/42 rounded-full blur-[26px]" />
+          <div className="absolute bottom-[20.5%] left-[14%] w-[140px] md:w-[250px] h-[40px] md:h-[60px] bg-white/76 rounded-full blur-[12px]" />
+        </div>
         {/* 작은 구름 (앞쪽, 진하게) */}
-        <div className="absolute top-[7%] left-[30%] w-[80px] md:w-[140px] h-[30px] md:h-[45px] bg-white/70 rounded-full blur-[10px]" />
-        <div className="absolute top-[22%] right-[30%] w-[90px] md:w-[150px] h-[35px] md:h-[50px] bg-white/65 rounded-full blur-[12px]" />
-        <div className="absolute bottom-[30%] left-[50%] w-[70px] md:w-[120px] h-[28px] md:h-[40px] bg-white/60 rounded-full blur-[10px]" />
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '2s' }}>
+          <div className="absolute top-[7%] left-[35%] w-[90px] md:w-[150px] h-[32px] md:h-[48px] bg-white/85 rounded-full blur-[8px]" />
+        </div>
+        <div className="animate-cloud-drift" style={{ animationDelay: '9s' }}>
+          <div className="absolute top-[24%] right-[28%] w-[100px] md:w-[160px] h-[35px] md:h-[50px] bg-white/82 rounded-full blur-[8px]" />
+        </div>
+        <div className="animate-cloud-drift-slow" style={{ animationDelay: '15s' }}>
+          <div className="absolute bottom-[28%] left-[48%] w-[80px] md:w-[130px] h-[28px] md:h-[42px] bg-white/80 rounded-full blur-[7px]" />
+        </div>
       </div>
 
       {/* === 별 파티클 (다크 모드 전용) — 다양한 크기 + 밝기 === */}
