@@ -7,6 +7,7 @@
 import type { Project } from '../../types/project.types';
 import { PROJECT_STATUS_LABELS } from '../../constants/projects';
 import GlassCard from '../common/GlassCard';
+import BrandText from '../common/BrandText';
 import { DynamicIcon } from '../icons/Icons';
 
 interface ProjectCardProps {
@@ -46,20 +47,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         `}
       />
 
-      {/* 상태 배지 + 아이콘 */}
+      {/* 상태 배지 + 아이콘 로고 */}
       <div className="flex items-center justify-between mb-4">
-        {logoSrc ? (
-          <img src={logoSrc} alt={name} className="h-6 w-6 dark:invert" />
-        ) : (
-          <span className={accentColor}><DynamicIcon name={icon} size={40} fallback={icon} /></span>
-        )}
+        <div className="flex items-center gap-3">
+          {logoSrc ? (
+            <img src={logoSrc} alt={name} className="h-10 w-10 dark:invert" />
+          ) : (
+            <span className={accentColor}><DynamicIcon name={icon} size={40} fallback={icon} /></span>
+          )}
+        </div>
         <span className={`text-xs font-medium px-3 py-1 rounded-full ${statusStyles[status] ?? ''}`}>
           {statusLabel}
         </span>
       </div>
 
-      {/* 프로젝트 정보 */}
-      <h3 className={`text-xl font-bold mb-2 ${accentColor}`}>{name}</h3>
+      {/* 프로젝트 정보 — 텍스트 로고 + 설명 */}
+      <h3 className="mb-2">
+        <BrandText brand={project.id} size="text-xl" />
+      </h3>
       <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">{description}</p>
 
       {/* 링크 표시 */}
